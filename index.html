@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IAC | Software Developer</title>
+<meta name="description" content="IAC is an independent software developer in Vinnytsia, Ukraine, building bots, automation, and websites.">
+<link rel="icon" href="iac-logo.svg" type="image/svg+xml">
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #101418;
+    --panel: #181e24;
+    --line: #2b343d;
+    --text: #f4f6f8;
+    --muted: #a8b3bd;
+    --lime: #c6f135;
+    --mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+    --sans: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--ink); color: var(--text); font: 17px/1.6 var(--sans); }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+  .wrap { width: min(1040px, 100% - 32px); margin-inline: auto; }
+
+  header { position: sticky; top: 0; z-index: 2; background: var(--ink); border-bottom: 1px solid var(--line); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+  .brand { display: block; width: 74px; }
+  .brand svg { display: block; width: 100%; height: auto; }
+  nav { display: flex; align-items: center; gap: 24px; font-size: 15px; }
+  nav a { text-decoration: none; color: var(--muted); }
+  nav a:hover { color: var(--text); }
+  .lang { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .lang button { border: 0; background: none; color: var(--muted); font: 13px var(--mono); padding: 6px 10px; cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--lime); color: var(--ink); }
+
+  .hero { padding: 104px 0 96px; }
+  .eyebrow { font: 14px var(--mono); color: var(--lime); margin: 0 0 20px; }
+  h1 { font-size: clamp(38px, 7vw, 68px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 24px; max-width: 16ch; }
+  .lead { color: var(--muted); font-size: 20px; max-width: 56ch; margin: 0 0 36px; }
+  .button { display: inline-block; background: var(--lime); color: var(--ink); font-weight: 600; text-decoration: none; padding: 13px 22px; border-radius: 6px; }
+  .button:hover { background: #d5f95f; }
+
+  section.block { padding: 72px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 30px; line-height: 1.2; margin: 0 0 32px; }
+  h3 { font-size: 19px; margin: 0 0 8px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 24px; }
+  .card p { margin: 0; color: var(--muted); font-size: 16px; }
+
+  .project { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+  .project p { max-width: 60ch; }
+  .tags { font: 13px var(--mono); color: var(--lime); margin-top: 12px !important; }
+  .project a { white-space: nowrap; color: var(--lime); }
+  .note { color: var(--muted); margin: 20px 0 0; }
+
+  .steps { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 48px; }
+  .steps li { counter-increment: step; display: flex; gap: 16px; color: var(--muted); }
+  .steps li::before { content: counter(step, decimal-leading-zero); font: 14px/1.9 var(--mono); color: var(--lime); }
+
+  .contacts { display: flex; flex-wrap: wrap; gap: 12px; }
+  .contacts .ghost { background: none; color: var(--text); border: 1px solid var(--line); }
+  .contacts .ghost:hover { border-color: var(--lime); }
+  footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: 14px; }
+
+  @media (max-width: 760px) {
+    nav a { display: none; }
+    .hero { padding: 64px 0; }
+    .lead { font-size: 18px; }
+    section.block { padding: 52px 0; }
+    .grid, .steps { grid-template-columns: 1fr; }
+    .project { flex-direction: column; gap: 12px; }
+  }
+
+  /* Animation */
+  #progress { height: 2px; background: var(--lime); transform: scaleX(0); transform-origin: left; margin-bottom: -1px; }
+  .hero-area { position: relative; overflow: hidden; }
+  #sky { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero { position: relative; pointer-events: none; }
+  .hero a { pointer-events: auto; }
+  .hero > * { animation: rise .7s cubic-bezier(.2, .8, .2, 1) both; }
+  .hero > :nth-child(2) { animation-delay: .1s; }
+  .hero > :nth-child(3) { animation-delay: .2s; }
+  .hero > :nth-child(4) { animation-delay: .3s; }
+  .hero > :nth-child(5) { animation-delay: .4s; }
+  .typed { font: 16px/1.5 var(--mono); min-height: 24px; margin: 0 0 32px; color: var(--text); }
+  .typed .prompt { color: var(--lime); }
+  .cursor { display: inline-block; width: 9px; height: 1.05em; margin-left: 3px; vertical-align: -2px; background: var(--lime); animation: blink 1s steps(1) infinite; }
+
+  .brand polygon { transform-box: fill-box; transform-origin: bottom; animation: hop .7s .5s both; }
+  .brand:hover polygon { animation: hop2 .6s; }
+
+  .button, .card { transition: transform .2s ease, border-color .2s ease, background-color .2s ease; }
+  .button:hover { transform: translateY(-3px) rotate(-1.5deg); }
+  .button:active { transform: scale(.96); }
+  .card:hover { transform: translateY(-6px) rotate(-.6deg); border-color: var(--lime); }
+  .card:nth-child(even):hover { transform: translateY(-6px) rotate(.6deg); }
+
+  .reveal h2, .reveal .lead, .reveal .card, .reveal .note, .reveal .steps li, .reveal .contacts {
+    opacity: 0; transform: translateY(26px);
+  }
+  .reveal.in h2, .reveal.in .lead, .reveal.in .card, .reveal.in .note, .reveal.in .steps li, .reveal.in .contacts {
+    opacity: 1; transform: none;
+    transition: opacity .6s ease, transform .6s cubic-bezier(.2, .8, .2, 1);
+  }
+  .reveal.in .card:nth-child(2), .reveal.in .steps li:nth-child(2) { transition-delay: .1s; }
+  .reveal.in .card:nth-child(3), .reveal.in .steps li:nth-child(3) { transition-delay: .2s; }
+  .reveal.in .steps li:nth-child(4) { transition-delay: .3s; }
+  .reveal.done .card { transition: transform .2s ease, border-color .2s ease; transition-delay: 0s; }
+  .reveal.done .card:hover { transform: translateY(-6px) rotate(-.6deg); }
+  .reveal.done .card:nth-child(even):hover { transform: translateY(-6px) rotate(.6deg); }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
+  @keyframes blink { 50% { opacity: 0; } }
+  @keyframes hop { 0% { transform: translateY(0); } 40% { transform: translateY(-22%) scaleY(1.08); } 70% { transform: translateY(0) scaleY(.92); } 100% { transform: none; } }
+  @keyframes hop2 { 0%, 100% { transform: none; } 40% { transform: translateY(-22%) scaleY(1.08); } 70% { transform: scaleY(.92); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .button:hover, .card:hover { transform: none !important; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="IAC">
+      <svg viewBox="180 375 640 250" aria-hidden="true">
+        <g transform="translate(32 0)">
+          <rect x="148" y="375" width="60" height="250" fill="#F4F6F8"/>
+          <polygon fill="#C6F135" points="238,625 330,375 390,375 482,625 418,625 360,467 302,625"/>
+          <path d="M704.2 432.8 A95 95 0 1 0 704.2 567.2" fill="none" stroke="#F4F6F8" stroke-width="60"/>
+        </g>
+      </svg>
+    </a>
+    <nav>
+      <a href="#services" data-i18n="navServices"></a>
+      <a href="#work" data-i18n="navWork"></a>
+      <a href="#contact" data-i18n="navContact"></a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="uk">UA</button>
+      </div>
+    </nav>
+  </div>
+  <div id="progress" aria-hidden="true"></div>
+</header>
+
+<main id="top">
+  <div class="hero-area">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <div class="wrap hero">
+      <p class="eyebrow" data-i18n="eyebrow"></p>
+      <h1 data-i18n="heroTitle"></h1>
+      <p class="lead" data-i18n="heroLead"></p>
+      <p class="typed" aria-hidden="true"><span class="prompt">$</span> <span id="typed"></span><span class="cursor"></span></p>
+      <a class="button" href="#contact" data-i18n="heroButton"></a>
+    </div>
+  </div>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <h2 data-i18n="servicesTitle"></h2>
+      <div class="grid" id="services-list"></div>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <h2 data-i18n="workTitle"></h2>
+      <div id="projects"></div>
+      <p class="note" data-i18n="workNote"></p>
+    </div>
+  </section>
+
+  <section class="block" id="process">
+    <div class="wrap">
+      <h2 data-i18n="processTitle"></h2>
+      <ol class="steps" id="steps"></ol>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <h2 data-i18n="contactTitle"></h2>
+      <p class="lead" data-i18n="contactLead"></p>
+      <div class="contacts" id="contacts"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">IAC · <span data-i18n="location"></span></div>
+</footer>
+
+<script>
+  /* ===== EDIT THIS PART ===== */
+  const CONTACTS = {
+    email: "",   // example: "name@example.com"
+    upwork: "",  // full link to your Upwork profile
+    github: "",  // full link to your GitHub profile
+  };
+
+  // Add real projects only. Copy one block for each new project.
+  const PROJECTS = [
+    {
+      title: { en: "IAC website", uk: "Сайт IAC" },
+      text: {
+        en: "A fast, responsive portfolio site with English and Ukrainian versions.",
+        uk: "Швидкий адаптивний сайт-портфоліо англійською та українською мовами.",
+      },
+      tags: "HTML · CSS · JavaScript",
+      link: "",
+    },
+  ];
+  /* ===== END OF EDITABLE PART ===== */
+
+  const TEXT = {
+    en: {
+      navServices: "Services", navWork: "Work", navContact: "Contact",
+      eyebrow: "Software developer · Vinnytsia, Ukraine",
+      heroTitle: "Small software that does its job.",
+      heroLead: "I build bots, automation scripts, and websites for people who want a clear plan and code they can keep.",
+      heroButton: "Tell me about your task",
+      servicesTitle: "What I build",
+      services: [
+        ["Bots", "Telegram bots for orders, notifications, and everyday customer questions."],
+        ["Automation", "Scripts that handle repeated work and connect your tools through APIs."],
+        ["Websites", "Responsive landing pages and small sites that are easy to maintain."],
+      ],
+      workTitle: "Work",
+      workNote: "More projects will appear here as they are finished.",
+      viewProject: "View project",
+      processTitle: "How I work",
+      steps: [
+        "We agree on the scope, deadline, and price before I start.",
+        "I share progress while the work is underway.",
+        "I test the result against what we agreed.",
+        "You get the source code and setup instructions.",
+      ],
+      contactTitle: "Have a task in mind?",
+      contactLead: "Send a short description, and I'll reply with my approach and a time estimate.",
+      contactEmail: "Email me", contactUpwork: "Upwork", contactGithub: "GitHub",
+      location: "Vinnytsia, Ukraine",
+    },
+    uk: {
+      navServices: "Послуги", navWork: "Роботи", navContact: "Контакти",
+      eyebrow: "Розробник програмного забезпечення · Вінниця, Україна",
+      heroTitle: "Невеликі програми, які роблять свою справу.",
+      heroLead: "Створюю ботів, скрипти для автоматизації та сайти для тих, кому потрібні зрозумілий план і код, який залишиться у вас.",
+      heroButton: "Розкажіть про завдання",
+      servicesTitle: "Що я створюю",
+      services: [
+        ["Боти", "Telegram-боти для замовлень, сповіщень і типових запитань клієнтів."],
+        ["Автоматизація", "Скрипти, які виконують повторювану роботу та з'єднують ваші сервіси через API."],
+        ["Сайти", "Адаптивні лендинги та невеликі сайти, які легко підтримувати."],
+      ],
+      workTitle: "Роботи",
+      workNote: "Нові проєкти з'являтимуться тут після завершення.",
+      viewProject: "Переглянути проєкт",
+      processTitle: "Як я працюю",
+      steps: [
+        "Перед початком ми погоджуємо обсяг робіт, термін і ціну.",
+        "Під час роботи я розповідаю, як просувається проєкт.",
+        "Перевіряю результат відповідно до домовленостей.",
+        "Ви отримуєте вихідний код та інструкцію із запуску.",
+      ],
+      contactTitle: "Маєте завдання?",
+      contactLead: "Надішліть короткий опис, і я відповім, як планую його виконати та скільки часу це займе.",
+      contactEmail: "Написати листа", contactUpwork: "Upwork", contactGithub: "GitHub",
+      location: "Вінниця, Україна",
+    },
+  };
+
+  function el(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text) node.textContent = text;
+    return node;
+  }
+
+  function render(lang) {
+    const t = TEXT[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach((node) => { node.textContent = t[node.dataset.i18n]; });
+    document.querySelectorAll("[data-lang]").forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
+    });
+
+    document.getElementById("services-list").replaceChildren(...t.services.map(([title, text]) => {
+      const card = el("article", "card");
+      card.append(el("h3", "", title), el("p", "", text));
+      return card;
+    }));
+
+    document.getElementById("projects").replaceChildren(...PROJECTS.map((project) => {
+      const card = el("article", "card project");
+      const body = el("div");
+      body.append(el("h3", "", project.title[lang]), el("p", "", project.text[lang]), el("p", "tags", project.tags));
+      card.append(body);
+      if (project.link) {
+        const link = el("a", "", t.viewProject);
+        link.href = project.link;
+        card.append(link);
+      }
+      return card;
+    }));
+
+    document.getElementById("steps").replaceChildren(...t.steps.map((step) => el("li", "", step)));
+
+    const links = [];
+    if (CONTACTS.email) links.push([`mailto:${CONTACTS.email}`, t.contactEmail]);
+    if (CONTACTS.upwork) links.push([CONTACTS.upwork, t.contactUpwork]);
+    if (CONTACTS.github) links.push([CONTACTS.github, t.contactGithub]);
+    document.getElementById("contacts").replaceChildren(...links.map(([href, label], index) => {
+      const link = el("a", index ? "button ghost" : "button", label);
+      link.href = href;
+      return link;
+    }));
+  }
+
+  function savedLang() {
+    try { return localStorage.getItem("lang"); } catch { return null; }
+  }
+
+  document.querySelectorAll("[data-lang]").forEach((button) => {
+    button.addEventListener("click", () => {
+      render(button.dataset.lang);
+      try { localStorage.setItem("lang", button.dataset.lang); } catch {}
+    });
+  });
+
+  render(savedLang() === "uk" ? "uk" : "en");
+
+  /* Animation */
+  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const progress = document.getElementById("progress");
+  function updateProgress() {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+  }
+  addEventListener("scroll", updateProgress, { passive: true });
+  addEventListener("resize", updateProgress);
+  updateProgress();
+
+  const COMMANDS = ["iac build telegram-bot", "iac automate --boring-stuff", "iac deploy website", "iac fix bugs"];
+  const typed = document.getElementById("typed");
+  const sleep = (ms) => new Promise((done) => setTimeout(done, ms));
+  async function typeCommands() {
+    for (let i = 0; ; i = (i + 1) % COMMANDS.length) {
+      const command = COMMANDS[i];
+      for (let n = 1; n <= command.length; n++) { typed.textContent = command.slice(0, n); await sleep(55); }
+      await sleep(1600);
+      for (let n = command.length; n >= 0; n--) { typed.textContent = command.slice(0, n); await sleep(22); }
+      await sleep(250);
+    }
+  }
+  if (calm) typed.textContent = COMMANDS[0]; else typeCommands();
+
+  if (!calm && "IntersectionObserver" in window) {
+    const seen = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("in");
+        seen.unobserve(entry.target);
+        setTimeout(() => entry.target.classList.add("done"), 1100);
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll("section.block").forEach((section) => {
+      section.classList.add("reveal");
+      seen.observe(section);
+    });
+  }
+
+  function setupSky() {
+    const area = document.querySelector(".hero-area");
+    const canvas = document.getElementById("sky");
+    const ctx = canvas.getContext("2d");
+    if (calm || !ctx) return;
+
+    const random = (min, max) => min + Math.random() * (max - min);
+    let width = 0, height = 0, pointer = null, visible = true, running = false;
+    let carets = [], sparks = [];
+
+    const makeCaret = (y) => ({
+      x: random(0, width), y, size: random(8, 22), speed: random(.15, .55), sway: random(0, 6.3),
+      turn: random(-.4, .4), lime: Math.random() < .6, alpha: random(.14, .36), pushX: 0, pushY: 0,
+    });
+
+    function resize() {
+      const box = area.getBoundingClientRect();
+      const scale = Math.min(devicePixelRatio || 1, 2);
+      width = box.width; height = box.height;
+      canvas.width = width * scale; canvas.height = height * scale;
+      ctx.setTransform(scale, 0, 0, scale, 0, 0);
+      const count = Math.min(36, Math.floor(width / 34));
+      carets = Array.from({ length: count }, () => makeCaret(random(0, height)));
+    }
+
+    function drawCaret(x, y, size, turn, color, alpha) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(turn);
+      ctx.globalAlpha = alpha;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = Math.max(2, size * .26);
+      ctx.beginPath();
+      ctx.moveTo(-size * .5, size * .55);
+      ctx.lineTo(0, -size * .55);
+      ctx.lineTo(size * .5, size * .55);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function frame() {
+      if (!visible) { running = false; return; }
+      ctx.clearRect(0, 0, width, height);
+      for (const c of carets) {
+        c.sway += .012;
+        if (pointer) {
+          const dx = c.x - pointer.x, dy = c.y - pointer.y, distance = Math.hypot(dx, dy) || 1;
+          if (distance < 140) {
+            const force = (140 - distance) / 140;
+            c.pushX += (dx / distance) * force * .7;
+            c.pushY += (dy / distance) * force * .7;
+          }
+        }
+        c.x += Math.sin(c.sway) * .25 + c.pushX;
+        c.y += c.pushY - c.speed;
+        c.pushX *= .92; c.pushY *= .92;
+        if (c.y < -30) Object.assign(c, makeCaret(height + 30));
+        drawCaret(c.x, c.y, c.size, c.turn + Math.sin(c.sway) * .2, c.lime ? "#c6f135" : "#f4f6f8", c.alpha);
+      }
+      sparks = sparks.filter((s) => s.life > 0);
+      for (const s of sparks) {
+        s.x += s.vx; s.y += s.vy; s.vy += .09; s.turn += s.spin; s.life -= .018;
+        drawCaret(s.x, s.y, s.size, s.turn, s.lime ? "#c6f135" : "#f4f6f8", Math.max(s.life, 0));
+      }
+      requestAnimationFrame(frame);
+    }
+
+    function start() {
+      if (running || !visible) return;
+      running = true;
+      requestAnimationFrame(frame);
+    }
+
+    function position(event) {
+      const box = area.getBoundingClientRect();
+      return { x: event.clientX - box.left, y: event.clientY - box.top };
+    }
+
+    area.addEventListener("pointermove", (event) => { pointer = position(event); });
+    area.addEventListener("pointerleave", () => { pointer = null; });
+    area.addEventListener("pointerdown", (event) => {
+      if (event.target.closest("a")) return;
+      const { x, y } = position(event);
+      for (let i = 0; i < 18; i++) {
+        const angle = random(0, 6.3), power = random(2, 7);
+        sparks.push({
+          x, y, vx: Math.cos(angle) * power, vy: Math.sin(angle) * power - 2, size: random(8, 18),
+          turn: random(0, 6.3), spin: random(-.2, .2), lime: Math.random() < .75, life: 1,
+        });
+      }
+    });
+
+    new ResizeObserver(resize).observe(area);
+    new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      start();
+    }).observe(area);
+    resize();
+    start();
+  }
+  setupSky();
+</script>
+</body>
+</html>
