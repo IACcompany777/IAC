@@ -71,6 +71,7 @@ h3 { font-size: 19px; margin: 0 0 8px; }
 .card p { margin: 0; color: var(--muted); font-size: 16px; }
 .card:hover { transform: translateY(-6px) rotate(-.6deg); border-color: var(--lime); }
 .card:nth-child(even):hover { transform: translateY(-6px) rotate(.6deg); }
+.review-name { margin: 18px 0 2px; }
 .more { display: block; margin-top: 14px; font: 14px var(--mono); color: var(--lime); }
 .project { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
 .project p { max-width: 60ch; }

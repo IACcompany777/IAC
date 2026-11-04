@@ -1,5 +1,5 @@
 (function () {
-  const { contacts, projects, nav, ui, pages } = window.SITE;
+  const { contacts, projects, reviews, nav, ui, pages } = window.SITE;
   const pageKey = document.body.dataset.page;
   const page = pages[pageKey] || pages.home;
   const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -231,6 +231,25 @@
         list.append(card);
       });
       wrap.append(list, el("p", "note", tr(ui.moreProjects)));
+      return block;
+    },
+
+    reviews() {
+      const { block, wrap } = section();
+      if (!reviews.length) {
+        const card = el("article", "card");
+        card.append(el("h3", "", tr(ui.noReviewsTitle)), el("p", "", tr(ui.noReviews)));
+        wrap.append(card);
+        return block;
+      }
+      const grid = el("div", "grid two");
+      reviews.forEach((review) => {
+        const card = el("article", "card");
+        card.append(el("p", "", tr(review.text)), el("h3", "review-name", review.name), el("p", "", tr(review.project)));
+        if (review.link) card.append(link(review.link, "more", tr(ui.originalReview)));
+        grid.append(card);
+      });
+      wrap.append(grid);
       return block;
     },
 

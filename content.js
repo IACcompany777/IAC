@@ -22,11 +22,16 @@ window.SITE = {
       link: "",
     },
   ],
+
+  // Add real client reviews only. Example:
+  // { name: "Client name", project: L("Telegram bot", "Telegram-бот"), text: L("Review in English", "Відгук українською"), link: "https://link-to-the-original-review" },
+  reviews: [],
   /* ===== END OF EDITABLE PART ===== */
 
   nav: [
     ["services.html", L("Services", "Послуги")],
     ["work.html", L("Work", "Роботи")],
+    ["reviews.html", L("Reviews", "Відгуки")],
     ["process.html", L("Process", "Процес")],
     ["about.html", L("About", "Про мене")],
     ["faq.html", L("FAQ", "Питання")],
@@ -79,6 +84,9 @@ window.SITE = {
     game: {
       score: L("Caught", "Спіймано"),
     },
+    noReviewsTitle: L("No reviews yet", "Відгуків поки немає"),
+    noReviews: L("Client reviews will appear here after the first finished projects. I only publish real ones.", "Відгуки клієнтів з'являться тут після перших завершених проєктів. Я публікую лише справжні."),
+    originalReview: L("See the original", "Переглянути оригінал"),
   },
 
   pages: {
@@ -280,6 +288,24 @@ window.SITE = {
           title: L("Your project could be next.", "Наступним може бути ваш проєкт."),
           text: L("Send a short description of what you need.", "Надішліть короткий опис того, що вам потрібно."),
           button: { text: L("Get in touch", "Зв'язатися"), href: "contact.html" },
+        },
+      ],
+    },
+
+    reviews: {
+      blocks: [
+        {
+          type: "hero",
+          eyebrow: L("Reviews", "Відгуки"),
+          title: L("What clients say.", "Що кажуть клієнти."),
+          lead: L("Real feedback from people I've worked with.", "Справжні відгуки людей, з якими я працював."),
+        },
+        { type: "reviews" },
+        {
+          type: "cta",
+          title: L("Have we worked together?", "Ми вже працювали разом?"),
+          text: L("I'd be glad to hear your feedback, good or bad.", "Буду радий вашому відгуку, хорошому чи поганому."),
+          button: { text: L("Send feedback", "Надіслати відгук"), href: "contact.html" },
         },
       ],
     },
