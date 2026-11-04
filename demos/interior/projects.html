@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Концепти кімнат | Демо-проєкт IAC</title>
+<meta name="description" content="Шість намальованих концептів кімнат вигаданої студії «Тиха Кімната» з фільтром за типом приміщення та порівнянням «до і після».">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f3efe7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f3efe7'/%3E%3Cpath d='M7 26V6h19' fill='none' stroke='%232a2e29' stroke-width='3'/%3E%3Cpath d='M7 26A19 20 0 0 1 26 6' fill='none' stroke='%23a54a2e' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.className = 'js';</script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="demo-banner" role="note"><p>Демо-проєкт IAC: компанія вигадана, форми нічого не надсилають. <a href="../../work.html">До портфоліо</a></p></div>
+<a class="skip-link" href="#main">Перейти до основного змісту</a>
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="index.html">
+      <svg viewBox="0 0 28 28" aria-hidden="true" focusable="false"><path class="logo__wall" d="M3 26V3h23"/><path class="logo__door" d="M3 26A23 23 0 0 1 26 3"/></svg>
+      <span>Тиха Кімната</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Меню</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Основна навігація">
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="projects.html">Концепти</a></li>
+        <li><a href="services.html">Послуги</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <div class="wrap page-head">
+    <div class="page-head__in">
+      <p class="eyebrow">Концепти</p>
+      <h1>Шість кімнат, яких поки немає</h1>
+      <p class="lede">Усе нижче&nbsp;— намальовані концепти. Це не реалізовані проєкти й не роботи для клієнтів, а ескізи того, як можуть виглядати спокійні кімнати.</p>
+    </div>
+  </div>
+
+  <section class="wrap pad-bottom" aria-label="Галерея концептів">
+    <div class="filters">
+      <div class="filters__row" role="group" aria-label="Фільтр за типом кімнати">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">Усі</button>
+        <button class="chip" type="button" data-filter="living" aria-pressed="false">Вітальня</button>
+        <button class="chip" type="button" data-filter="bedroom" aria-pressed="false">Спальня</button>
+        <button class="chip" type="button" data-filter="kitchen" aria-pressed="false">Кухня</button>
+        <button class="chip" type="button" data-filter="bath" aria-pressed="false">Ванна</button>
+      </div>
+      <p class="filters__status" role="status">Показано 6 концептів із 6</p>
+    </div>
+
+    <div class="gallery">
+      <article class="concept reveal" id="concept-01" data-room="living">
+        <div class="concept__art">
+          <svg class="art" viewBox="0 0 800 600" role="img" aria-label="Концепт вітальні: шавлієвий диван, бічне вікно, торшер і абстрактна картина на стіні">
+            <rect class="r-ceil" width="800" height="600"/><path class="r-wall-l" d="M0 0 130 85V490L0 600Z"/><path class="r-wall-r" d="M800 0 670 85V490L800 600Z"/><rect class="r-wall" x="130" y="85" width="540" height="405"/><path class="r-floor" d="M130 490H670L800 600H0Z"/>
+            <path class="r-fine" d="M197 490 100 600M299 490 250 600M400 490V600M501 490 550 600M603 490 700 600"/>
+            <path class="r-ln" d="M0 0 130 85H670L800 0M0 600 130 490H670L800 600M130 85V490M670 85V490"/>
+            <path class="r-sky r-st" d="M35 123 105 149V393L35 424Z"/><path class="r-ln" d="M70 136V408"/>
+            <path class="r-sun" d="M120 508H340L300 592H20Z"/>
+            <path class="r-sage-l" d="M205 514H595L640 568H160Z"/>
+            <rect class="r-paper r-st" x="312" y="150" width="176" height="128"/>
+            <path class="r-sage" d="M313 277V232Q400 170 487 240V277Z"/><circle class="r-terra" cx="432" cy="198" r="16"/>
+            <rect class="r-sage r-st" x="215" y="350" width="350" height="90" rx="14"/>
+            <rect class="r-paper r-st" x="250" y="372" width="74" height="56" rx="8"/><rect class="r-sage-xl r-st" x="336" y="372" width="74" height="56" rx="8"/><rect class="r-terra r-st" x="460" y="380" width="60" height="48" rx="8"/>
+            <rect class="r-sage-d r-st" x="205" y="420" width="370" height="66" rx="10"/>
+            <rect class="r-sage r-st" x="190" y="384" width="38" height="102" rx="14"/><rect class="r-sage r-st" x="552" y="384" width="38" height="102" rx="14"/>
+            <path class="r-ln" d="M216 486V506M564 486V506"/>
+            <path class="r-ln" d="M622 190V512M600 514H644"/><path class="r-paper r-st" d="M600 176H644L660 236H584Z"/>
+            <path class="r-wood-d" d="M146 476H178L172 516H152Z"/><path class="r-ln" d="M162 476Q156 420 136 400M162 476Q168 430 186 408M162 476V392"/>
+          </svg>
+        </div>
+        <p class="concept__label">Концепт 01 · Вітальня</p>
+        <h2 class="concept__name">Льон і тінь</h2>
+        <p class="concept__text">Низький диван, лляний текстиль і одна теракотова подушка. Вікно збоку кладе на підлогу м’яку смугу світла.</p>
+        <p class="concept__mat">Льон, світлий дуб, вапняна фарба</p>
+      </article>
+
+      <article class="concept reveal" id="concept-02" data-room="bedroom">
+        <div class="concept__art">
+          <svg class="art" viewBox="0 0 800 600" role="img" aria-label="Концепт спальні: шавлієва стіна за ліжком, дві підвісні лампи й тумби обабіч ліжка">
+            <rect class="r-ceil" width="800" height="600"/><path class="r-wall-l" d="M0 0 130 85V490L0 600Z"/><path class="r-wall-r" d="M800 0 670 85V490L800 600Z"/><rect class="r-sage-l" x="130" y="85" width="540" height="405"/><path class="r-floor" d="M130 490H670L800 600H0Z"/>
+            <path class="r-fine" d="M197 490 100 600M299 490 250 600M400 490V600M501 490 550 600M603 490 700 600M220 85V490M310 85V490M400 85V490M490 85V490M580 85V490"/>
+            <path class="r-ln" d="M0 0 130 85H670L800 0M0 600 130 490H670L800 600M130 85V490M670 85V490"/>
+            <path class="r-sky r-st" d="M765 123 695 149V393L765 424Z"/><path class="r-ln" d="M730 136V408"/>
+            <path class="r-sun" d="M680 508H470L510 592H780Z"/>
+            <rect class="r-wood r-st" x="232" y="316" width="336" height="130" rx="6"/>
+            <rect class="r-paper r-st" x="250" y="372" width="130" height="58" rx="14"/><rect class="r-paper r-st" x="420" y="372" width="130" height="58" rx="14"/><rect class="r-terra r-st" x="366" y="390" width="68" height="44" rx="10"/>
+            <rect class="r-paper r-st" x="215" y="420" width="370" height="60" rx="8"/>
+            <rect class="r-sage-d r-st" x="215" y="442" width="370" height="42" rx="4"/>
+            <rect class="r-wood-d r-st" x="222" y="484" width="356" height="30"/>
+            <rect class="r-wood r-st" x="146" y="424" width="60" height="70"/><rect class="r-wood r-st" x="594" y="424" width="60" height="70"/>
+            <path class="r-fine" d="M146 458H206M594 458H654"/>
+            <path class="r-ln" d="M176 85V296M624 85V296"/>
+            <circle class="r-paper r-st" cx="176" cy="314" r="18"/><circle class="r-paper r-st" cx="624" cy="314" r="18"/>
+            <rect class="r-sage-xl r-st" x="154" y="414" width="40" height="10"/>
+          </svg>
+        </div>
+        <p class="concept__label">Концепт 02 · Спальня</p>
+        <h2 class="concept__name">Ранкова стіна</h2>
+        <p class="concept__text">Шавлієва стіна за узголів’ям гасить зайвий блиск, а підвісні лампи звільняють тумби від дрібниць.</p>
+        <p class="concept__mat">Матова фарба, горіх, бавовна</p>
+      </article>
+
+      <article class="concept reveal" id="concept-03" data-room="kitchen">
+        <div class="concept__art">
+          <svg class="art" viewBox="0 0 800 600" role="img" aria-label="Концепт кухні у фронтальному кресленні: шавлієві фасади, відкрита полиця, теракотовий плитковий фартух і позначені розміри">
+            <defs><pattern id="tile-k" width="36" height="36" patternUnits="userSpaceOnUse"><rect class="r-terra" width="36" height="36"/><path d="M0 0H36M0 0V36" fill="none" stroke="#fbf9f4" stroke-width="1" opacity=".55"/></pattern></defs>
+            <rect class="r-wall" width="800" height="600"/><rect class="r-floor" y="500" width="800" height="100"/>
+            <path class="r-ln" d="M0 500H800"/>
+            <rect x="90" y="240" width="620" height="108" fill="url(#tile-k)"/>
+            <rect class="r-sage-l r-st" x="500" y="90" width="210" height="150"/><path class="r-fine" d="M570 90V240M640 90V240"/>
+            <rect class="r-wood-d" x="90" y="222" width="390" height="8"/>
+            <rect class="r-paper r-st" x="120" y="172" width="34" height="50"/><rect class="r-paper r-st" x="162" y="188" width="30" height="34"/>
+            <path class="r-sage-d" d="M230 196H310Q306 222 270 222T230 196Z"/><path class="r-paper r-st" d="M340 182H420Q416 222 380 222T340 182Z"/>
+            <rect class="r-sage r-st" x="90" y="360" width="620" height="126"/>
+            <path class="r-ln" d="M193 360V486M297 360V486M400 360V486M503 360V486M607 360V486"/>
+            <rect class="r-paper r-st" x="80" y="348" width="640" height="12"/>
+            <rect class="r-ink" x="90" y="486" width="620" height="14"/>
+            <path class="r-ln" d="M262 348V300Q262 280 284 280Q304 280 304 300"/>
+            <path class="r-wood r-st" d="M560 348V322H640V348Z"/>
+            <path class="r-dim" d="M90 52H710M90 46V58M710 46V58M44 348V500M38 348H50M38 500H50"/>
+            <text class="r-txt" x="382" y="42">3 600</text>
+            <text class="r-txt" transform="rotate(-90 34 436)" x="34" y="436">900</text>
+          </svg>
+        </div>
+        <p class="concept__label">Концепт 03 · Кухня</p>
+        <h2 class="concept__name">Глиняна кухня</h2>
+        <p class="concept__text">Фасади без ручок, відкрита полиця й фартух із теракотової плитки. Усе, що не потрібне щодня, сховано за рівною площиною.</p>
+        <p class="concept__mat">Теракота, матові фасади, кварцова стільниця</p>
+      </article>
+
+      <article class="concept reveal" id="concept-04" data-room="bath">
+        <div class="concept__art">
+          <svg class="art" viewBox="0 0 800 600" role="img" aria-label="Концепт ванної кімнати: окрема ванна, високе вузьке вікно, аркове дзеркало над підвісною тумбою й теракотовий рушник">
+            <defs><pattern id="tile-b" width="45" height="45" patternUnits="userSpaceOnUse"><rect class="r-wall" width="45" height="45"/><path d="M0 0H45M0 0V45" fill="none" stroke="#2f332e" stroke-width=".7" opacity=".22"/></pattern></defs>
+            <rect class="r-ceil" width="800" height="600"/><path class="r-wall-l" d="M0 0 130 85V490L0 600Z"/><path class="r-wall-r" d="M800 0 670 85V490L800 600Z"/><rect x="130" y="85" width="540" height="405" fill="url(#tile-b)"/><path class="r-sage-l" d="M130 490H670L800 600H0Z"/>
+            <path class="r-fine" d="M197 490 100 600M299 490 250 600M400 490V600M501 490 550 600M603 490 700 600M112 505H688M76 535H724M36 568H764"/>
+            <path class="r-ln" d="M0 0 130 85H670L800 0M0 600 130 490H670L800 600M130 85V490M670 85V490"/>
+            <rect class="r-sky r-st" x="262" y="130" width="110" height="190"/><path class="r-ln" d="M317 130V320"/>
+            <path class="r-shade" d="M180 512H500L520 530H160Z"/>
+            <path class="r-paper r-st" d="M165 395H490Q486 505 400 512H256Q170 505 165 395Z"/>
+            <path class="r-ln" d="M155 395H500"/>
+            <path class="r-ln" d="M215 512 206 524M442 512 451 524"/>
+            <path class="r-ln" d="M126 500 120 360Q120 340 150 340Q170 340 170 362"/>
+            <rect class="r-terra r-st" x="404" y="395" width="46" height="62"/>
+            <path class="r-sky r-st" d="M538 330V212A47 47 0 0 1 632 212V330Z"/>
+            <rect class="r-wood r-st" x="520" y="356" width="130" height="62"/>
+            <rect class="r-paper r-st" x="512" y="346" width="146" height="10"/>
+            <path class="r-fine" d="M585 356V418"/>
+            <path class="r-ln" d="M585 346V332Q585 324 596 324"/>
+          </svg>
+        </div>
+        <p class="concept__label">Концепт 04 · Ванна</p>
+        <h2 class="concept__name">Вапнякова ванна</h2>
+        <p class="concept__text">Окрема ванна на тлі світлої плитки, аркове дзеркало й підвісна тумба, під якою легко прибирати.</p>
+        <p class="concept__mat">Вапняк, керамічна плитка, дуб</p>
+      </article>
+
+      <article class="concept reveal" id="concept-05" data-room="bedroom">
+        <div class="concept__art">
+          <svg class="art" viewBox="0 0 800 600" role="img" aria-label="Концепт мансардної спальні в розрізі: низьке ліжко під скісним дахом, мансардне вікно зі смугою світла, вбудована полиця й шафа">
+            <rect class="r-ceil" width="800" height="600"/>
+            <path class="r-sage-d" d="M40 545V318L432 42H770V545Z"/>
+            <path class="r-wall" d="M70 510V330L440 70H740V510Z"/>
+            <rect class="r-floor" x="70" y="510" width="670" height="12"/>
+            <path class="r-sky r-st" d="M190 246 290 175 272 150 170 222Z"/>
+            <path class="r-sun" d="M190 246 290 175 450 480 240 480Z"/>
+            <rect class="r-paper r-st" x="70" y="400" width="74" height="110"/><path class="r-ln" d="M70 437H144M70 474H144"/>
+            <rect class="r-sage r-st" x="84" y="411" width="10" height="26"/><rect class="r-terra" x="97" y="415" width="10" height="22"/><rect class="r-sage-l r-st" x="110" y="448" width="22" height="26"/>
+            <rect class="r-wood r-st" x="156" y="402" width="20" height="108"/>
+            <rect class="r-paper r-st" x="176" y="432" width="300" height="46" rx="8"/>
+            <rect class="r-paper r-st" x="184" y="408" width="84" height="32" rx="12"/>
+            <path class="r-sage-l r-st" d="M280 432H476V478H280Z"/>
+            <rect class="r-terra" x="400" y="432" width="28" height="46"/>
+            <rect class="r-wood-d" x="176" y="478" width="300" height="20"/>
+            <path class="r-ln" d="M196 498V510M456 498V510"/>
+            <rect class="r-sage-l r-st" x="596" y="150" width="144" height="360"/><path class="r-ln" d="M668 150V510M660 320V350M676 320V350"/>
+            <path class="r-ln" d="M530 300V508M512 510H548"/><path class="r-paper r-st" d="M512 268H548L560 312H500Z"/>
+            <path class="r-dim" d="M785 70V510M779 70H791M779 510H791M70 575H740M70 569V581M740 569V581"/>
+            <text class="r-txt" x="388" y="596">4 200</text>
+            <text class="r-txt" transform="rotate(-90 798 320)" x="798" y="320">2 700</text>
+          </svg>
+        </div>
+        <p class="concept__label">Концепт 05 · Спальня</p>
+        <h2 class="concept__name">Під схилом даху</h2>
+        <p class="concept__text">Мансарда, де низька зона під скосом стала вбудованою полицею, а ліжко стоїть просто під вікном у даху.</p>
+        <p class="concept__mat">Дуб, льон, вапняна штукатурка</p>
+      </article>
+
+      <article class="concept reveal" id="concept-06" data-room="living">
+        <div class="concept__art">
+          <svg class="art" viewBox="0 0 800 600" role="img" aria-label="Концепт вітальні з аркою: арковий отвір до бібліотеки, два крісла й низький столик на круглому килимі">
+            <rect class="r-ceil" width="800" height="600"/><path class="r-wall-l" d="M0 0 130 85V490L0 600Z"/><path class="r-wall-r" d="M800 0 670 85V490L800 600Z"/><rect class="r-wall" x="130" y="85" width="540" height="405"/><path class="r-floor" d="M130 490H670L800 600H0Z"/>
+            <path class="r-fine" d="M197 490 100 600M299 490 250 600M400 490V600M501 490 550 600M603 490 700 600"/>
+            <path class="r-ln" d="M0 0 130 85H670L800 0M0 600 130 490H670L800 600M130 85V490M670 85V490"/>
+            <path class="r-sage-l r-st" d="M300 490V270A100 100 0 0 1 500 270V490Z"/>
+            <path class="r-ln" d="M330 490V240M470 490V240M330 240H470M330 300H470M330 360H470M330 420H470"/>
+            <rect class="r-paper" x="340" y="262" width="10" height="38"/><rect class="r-sage-d" x="352" y="268" width="12" height="32"/><rect class="r-wood" x="366" y="258" width="9" height="42"/>
+            <rect class="r-wood-d" x="420" y="326" width="12" height="34"/><rect class="r-paper" x="434" y="320" width="10" height="40"/>
+            <rect class="r-sage-d" x="345" y="384" width="11" height="36"/><rect class="r-terra" x="358" y="390" width="11" height="30"/><rect class="r-paper" x="371" y="380" width="9" height="40"/>
+            <ellipse class="r-sage-l" cx="400" cy="540" rx="250" ry="38"/>
+            <rect class="r-sage r-st" x="170" y="376" width="100" height="100" rx="18"/>
+            <rect class="r-sage-d r-st" x="158" y="440" width="124" height="48" rx="10"/>
+            <path class="r-ln" d="M172 488 166 526M268 488 274 526"/>
+            <rect class="r-paper r-st" x="530" y="376" width="100" height="100" rx="18"/>
+            <rect class="r-sage-xl r-st" x="518" y="440" width="124" height="48" rx="10"/>
+            <path class="r-ln" d="M532 488 526 526M628 488 634 526"/>
+            <rect class="r-wood-d" x="330" y="510" width="140" height="8"/><path class="r-ln" d="M346 518V552M454 518V552"/>
+            <path class="r-terra" d="M388 510Q378 492 392 478H408Q422 492 412 510Z"/>
+            <path class="r-ln" d="M210 85V170M590 85V170"/>
+            <path class="r-paper r-st" d="M180 200A30 30 0 0 1 240 200Z"/><path class="r-paper r-st" d="M560 200A30 30 0 0 1 620 200Z"/>
+          </svg>
+        </div>
+        <p class="concept__label">Концепт 06 · Вітальня</p>
+        <h2 class="concept__name">Кімната з аркою</h2>
+        <p class="concept__text">Арковий отвір поєднує вітальню з бібліотекою. Два крісла й низький столик залишають центр кімнати вільним.</p>
+        <p class="concept__mat">Вовна, дуб, мінеральна штукатурка</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="compare section" aria-labelledby="compare-title">
+    <div class="wrap compare__grid">
+      <div class="compare__text reveal">
+        <p class="eyebrow">До і після</p>
+        <h2 id="compare-title">Та сама кімната, менше шуму</h2>
+        <p>Перетягніть роздільник або поставте на нього фокус і користуйтеся стрілками, Home чи End.</p>
+        <p class="note">Обидва стани намальовано для демонстрації. Це концепт, а не реальне приміщення чи виконана робота.</p>
+      </div>
+      <div class="ba reveal" data-compare role="group" aria-label="Порівняння концепту до і після">
+        <div class="ba__layer--after">
+          <svg class="art" viewBox="0 0 800 600" role="img" aria-label="Стан після: світлі стіни, низька полиця, диван і вільна підлога">
+            <rect class="r-ceil" width="800" height="600"/><path class="r-wall-l" d="M0 0 130 85V490L0 600Z"/><path class="r-wall-r" d="M800 0 670 85V490L800 600Z"/><rect class="r-wall" x="130" y="85" width="540" height="405"/><path class="r-floor" d="M130 490H670L800 600H0Z"/>
+            <path class="r-fine" d="M197 490 100 600M299 490 250 600M400 490V600M501 490 550 600M603 490 700 600"/>
+            <path class="r-ln" d="M0 0 130 85H670L800 0M0 600 130 490H670L800 600M130 85V490M670 85V490"/>
+            <path class="r-sky r-st" d="M35 123 105 149V393L35 424Z"/><path class="r-ln" d="M70 136V408"/>
+            <path class="r-sun" d="M120 508H340L300 592H20Z"/>
+            <rect class="r-sage-l r-st" x="150" y="400" width="240" height="72"/><path class="r-ln" d="M230 400V472M310 400V472"/><path class="r-ln" d="M166 472V490M374 472V490"/>
+            <rect class="r-paper r-st" x="170" y="360" width="26" height="40"/><path class="r-terra" d="M322 400Q310 378 326 362H342Q358 378 346 400Z"/>
+            <rect class="r-paper r-st" x="190" y="190" width="150" height="110"/><path class="r-sage" d="M191 299V260Q265 205 339 266V299Z"/>
+            <rect class="r-sage r-st" x="430" y="370" width="210" height="84" rx="12"/>
+            <rect class="r-sage-d r-st" x="420" y="436" width="230" height="58" rx="10"/>
+            <path class="r-ln" d="M436 494V512M634 494V512"/>
+            <rect class="r-terra r-st" x="560" y="396" width="52" height="42" rx="7"/>
+            <path class="r-ln" d="M535 85V190"/><path class="r-paper r-st" d="M505 222A30 30 0 0 1 565 222Z"/>
+          </svg>
+          <span class="ba__tag">Після</span>
+        </div>
+        <div class="ba__layer--before">
+          <svg class="art" viewBox="0 0 800 600" role="img" aria-label="Стан до: стіни в дрібний візерунок, важка меблева стінка, килим на стіні й важкі штори">
+            <defs><pattern id="wp" width="40" height="40" patternUnits="userSpaceOnUse"><rect class="r-old" width="40" height="40"/><path class="r-old-m" d="M20 10l6 10-6 10-6-10z"/></pattern></defs>
+            <rect class="r-old-l" width="800" height="600"/><path class="r-old" d="M0 0 130 85V490L0 600Z"/><path class="r-old-m" d="M800 0 670 85V490L800 600Z"/><rect x="130" y="85" width="540" height="405" fill="url(#wp)"/><path class="r-old-m" d="M130 490H670L800 600H0Z"/>
+            <path class="r-ln" d="M0 0 130 85H670L800 0M0 600 130 490H670L800 600M130 85V490M670 85V490"/>
+            <path class="r-old-l r-st" d="M35 123 105 149V393L35 424Z"/>
+            <path class="r-old-r r-st" d="M22 112 66 130 58 420 16 436Z"/><path class="r-old-r r-st" d="M84 136 118 150V396L88 408Z"/>
+            <rect class="r-old-d r-st" x="150" y="150" width="270" height="340"/>
+            <path class="r-ln" d="M240 150V490M330 150V490M150 280H420M150 390H420"/>
+            <rect class="r-ink" x="256" y="300" width="58" height="72" opacity=".75"/>
+            <rect class="r-old-l r-st" x="165" y="176" width="58" height="84"/><rect class="r-old-l r-st" x="346" y="176" width="58" height="84"/>
+            <rect class="r-old-r r-st" x="452" y="170" width="190" height="150"/>
+            <rect class="r-old-m" x="468" y="186" width="158" height="118"/><path class="r-old-r" d="M547 200l50 45-50 45-50-45z"/>
+            <rect class="r-old-d r-st" x="440" y="372" width="210" height="82" rx="4"/>
+            <rect class="r-old-r r-st" x="430" y="436" width="230" height="58" rx="4"/>
+            <path class="r-ln" d="M446 494V510M644 494V510"/>
+            <path class="r-old-r" d="M150 520H640L690 575H110Z"/><path class="r-ln" d="M170 530H630M150 562H660"/>
+            <path class="r-ln" d="M400 85V130M340 150Q400 110 460 150"/><circle class="r-old-l r-st" cx="340" cy="160" r="11"/><circle class="r-old-l r-st" cx="400" cy="140" r="11"/><circle class="r-old-l r-st" cx="460" cy="160" r="11"/>
+          </svg>
+          <span class="ba__tag">До</span>
+        </div>
+        <div class="ba__handle" role="slider" tabindex="0" aria-label="Положення роздільника між станами до і після" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Стан «до»: 50%, стан «після»: 50%">
+          <span class="ba__grip" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M9 6 3 12l6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="next-title">
+    <div class="section-head section-head--flat reveal">
+      <div>
+        <h2 id="next-title">Цікаво, скільки це могло б коштувати?</h2>
+      </div>
+      <a class="btn" href="services.html">До послуг і калькулятора</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__brand">Тиха Кімната</p>
+        <p class="site-footer__about">Вигадана студія інтер’єрів. Усі кімнати на сайті&nbsp;— намальовані концепти.</p>
+      </div>
+      <div>
+        <p class="site-footer__title">Розділи</p>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="projects.html">Концепти</a></li>
+          <li><a href="services.html">Послуги</a></li>
+          <li><a href="contact.html">Контакти</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="site-footer__title">Контакти-заглушки</p>
+        <p>+380 00 000 00 00</p>
+        <p>hello@example.com</p>
+        <p>вул. Вигадана, 2, Вінниця</p>
+      </div>
+    </div>
+    <p class="site-footer__bottom"><a href="../../index.html">Сайт розроблено IAC</a></p>
+  </div>
+</footer>
+</body>
+</html>

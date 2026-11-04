@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Послуги та демо-калькулятор | Демо-проєкт IAC</title>
+<meta name="description" content="Три рівні послуг вигаданої студії «Тиха Кімната» та демонстраційний калькулятор орієнтовної вартості зі зразковими ставками.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f3efe7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f3efe7'/%3E%3Cpath d='M7 26V6h19' fill='none' stroke='%232a2e29' stroke-width='3'/%3E%3Cpath d='M7 26A19 20 0 0 1 26 6' fill='none' stroke='%23a54a2e' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.className = 'js';</script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="demo-banner" role="note"><p>Демо-проєкт IAC: компанія вигадана, форми нічого не надсилають. <a href="../../work.html">До портфоліо</a></p></div>
+<a class="skip-link" href="#main">Перейти до основного змісту</a>
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="index.html">
+      <svg viewBox="0 0 28 28" aria-hidden="true" focusable="false"><path class="logo__wall" d="M3 26V3h23"/><path class="logo__door" d="M3 26A23 23 0 0 1 26 3"/></svg>
+      <span>Тиха Кімната</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Меню</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Основна навігація">
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="projects.html">Концепти</a></li>
+        <li><a href="services.html">Послуги</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <div class="wrap page-head">
+    <div class="page-head__in">
+      <p class="eyebrow">Послуги</p>
+      <h1>Три рівні участі</h1>
+      <p class="lede">Беріть стільки допомоги, скільки потрібно вашій кімнаті. Кожен наступний рівень містить усе з попереднього.</p>
+    </div>
+  </div>
+
+  <section class="wrap pad-bottom" aria-label="Рівні послуг">
+    <div class="levels">
+      <article class="level reveal">
+        <div>
+          <p class="level__mark">Рівень 1</p>
+          <h2 class="level__name">Ескіз</h2>
+          <p class="level__for">Для тих, хто хоче зрозуміти напрям і далі рухатися самостійно.</p>
+        </div>
+        <svg class="level__plan" viewBox="0 0 160 120" aria-hidden="true" focusable="false">
+          <rect class="r-sage-xl" x="30" y="30" width="60" height="60"/>
+          <path class="r-thin-wall" d="M60 14H14V106H146V14H90"/>
+          <path class="r-route" d="M30 96Q60 40 110 40"/>
+        </svg>
+        <div>
+          <ul class="level__list">
+            <li>Розмова про ваші звички та потреби</li>
+            <li>Два варіанти планування</li>
+            <li>Колірна палітра</li>
+            <li>Перелік основних матеріалів</li>
+          </ul>
+          <p class="level__result"><strong>Результат:</strong> короткий альбом із планом і колірною схемою.</p>
+        </div>
+      </article>
+
+      <article class="level reveal">
+        <div>
+          <p class="level__mark">Рівень 2</p>
+          <h2 class="level__name">Проєкт</h2>
+          <p class="level__for">Для ремонту, який виконуватиме ваша бригада.</p>
+        </div>
+        <svg class="level__plan" viewBox="0 0 160 120" aria-hidden="true" focusable="false">
+          <rect class="r-sage-xl" x="30" y="30" width="60" height="60"/>
+          <rect class="r-sage-l r-st" x="104" y="34" width="28" height="56"/>
+          <rect class="r-wood r-st" x="60" y="48" width="22" height="30"/>
+          <rect class="r-paper r-st" x="18" y="40" width="12" height="50"/>
+          <path class="r-thin-wall" d="M60 14H14V106H146V14H90"/>
+          <path class="r-dim" d="M14 5H146M14 1V9M146 1V9M154 14V106M150 14H158M150 106H158"/>
+        </svg>
+        <div>
+          <ul class="level__list">
+            <li>Обмірний план на місці</li>
+            <li>Креслення електрики, освітлення й сантехніки</li>
+            <li>Розгортки стін і вузли</li>
+            <li>Відомість матеріалів і меблів</li>
+          </ul>
+          <p class="level__result"><strong>Результат:</strong> комплект креслень, з яким можна йти до будівельників.</p>
+        </div>
+      </article>
+
+      <article class="level reveal">
+        <div>
+          <p class="level__mark">Рівень 3</p>
+          <h2 class="level__name">Супровід</h2>
+          <p class="level__for">Для тих, хто не хоче координувати ремонт самотужки.</p>
+        </div>
+        <svg class="level__plan" viewBox="0 0 160 120" aria-hidden="true" focusable="false">
+          <rect class="r-sage-xl" x="30" y="30" width="60" height="60"/>
+          <rect class="r-sage-l r-st" x="104" y="34" width="28" height="56"/>
+          <rect class="r-wood r-st" x="60" y="48" width="22" height="30"/>
+          <rect class="r-paper r-st" x="18" y="40" width="12" height="50"/>
+          <path class="r-thin-wall" d="M60 14H14V106H146V14H90"/>
+          <path class="r-dim" d="M14 5H146M14 1V9M146 1V9M154 14V106M150 14H158M150 106H158"/>
+          <circle class="r-terra" cx="40" cy="28" r="4"/><circle class="r-terra" cx="118" cy="24" r="4"/><circle class="r-terra" cx="96" cy="96" r="4"/>
+          <path class="r-route" d="M40 28Q90 50 96 96Q110 60 118 24"/>
+        </svg>
+        <div>
+          <ul class="level__list">
+            <li>Авторський нагляд під час ремонту</li>
+            <li>Узгодження рішень із підрядниками</li>
+            <li>Підбір і замовлення меблів та світла</li>
+            <li>Фінальне розставлення й текстиль</li>
+          </ul>
+          <p class="level__result"><strong>Результат:</strong> одна відповідальна людина стежить, щоб кімната відповідала кресленням.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="estimator section" aria-labelledby="estimator-title">
+    <div class="wrap">
+      <div class="estimator__head reveal">
+        <p class="tag">Демо-розрахунок зі зразковими ставками</p>
+        <h2 id="estimator-title">Орієнтовна вартість</h2>
+        <p>Ставки вигадані, щоб показати роботу калькулятора. Це не ціни й не комерційна пропозиція.</p>
+      </div>
+      <div class="estimator__grid reveal">
+        <form id="estimator-form" novalidate onsubmit="return false">
+          <div class="field field--short">
+            <label for="est-area">Площа, м²</label>
+            <input id="est-area" name="area" type="number" inputmode="decimal" min="10" max="1000" step="any" value="60" required aria-describedby="est-area-hint est-area-error">
+            <p class="field__hint" id="est-area-hint">Від 10 до 1 000 м²</p>
+            <p class="field__error" id="est-area-error" hidden></p>
+          </div>
+          <fieldset class="fieldset">
+            <legend>Рівень послуги</legend>
+            <label class="choice">
+              <input type="radio" name="level" value="sketch" data-rate="400" data-name="Ескіз">
+              <span>Ескіз <span>зразкова ставка 400 грн/м²</span></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="level" value="project" data-rate="1200" data-name="Проєкт" checked>
+              <span>Проєкт <span>зразкова ставка 1 200 грн/м²</span></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="level" value="full" data-rate="2000" data-name="Супровід">
+              <span>Супровід <span>зразкова ставка 2 000 грн/м²</span></span>
+            </label>
+          </fieldset>
+        </form>
+        <div class="estimator__result">
+          <div role="status" aria-atomic="true">
+            <p class="estimator__label">Орієнтовно, демо-розрахунок</p>
+            <p class="estimator__total" id="est-total">72&nbsp;000&nbsp;грн</p>
+            <p class="estimator__detail" id="est-detail">60&nbsp;м² × 1&nbsp;200&nbsp;грн/м², рівень «Проєкт»</p>
+          </div>
+          <p class="estimator__fine">Формула проста: площа × зразкова ставка, округлено до 100 грн. Реальна вартість залежала б від багатьох умов, а цей результат нікуди не надсилається.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="next-title">
+    <div class="section-head section-head--flat reveal">
+      <div>
+        <h2 id="next-title">Не знаєте, який рівень обрати?</h2>
+      </div>
+      <a class="btn" href="contact.html">Перейти до форми</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__brand">Тиха Кімната</p>
+        <p class="site-footer__about">Вигадана студія інтер’єрів. Усі кімнати на сайті&nbsp;— намальовані концепти.</p>
+      </div>
+      <div>
+        <p class="site-footer__title">Розділи</p>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="projects.html">Концепти</a></li>
+          <li><a href="services.html">Послуги</a></li>
+          <li><a href="contact.html">Контакти</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="site-footer__title">Контакти-заглушки</p>
+        <p>+380 00 000 00 00</p>
+        <p>hello@example.com</p>
+        <p>вул. Вигадана, 2, Вінниця</p>
+      </div>
+    </div>
+    <p class="site-footer__bottom"><a href="../../index.html">Сайт розроблено IAC</a></p>
+  </div>
+</footer>
+</body>
+</html>

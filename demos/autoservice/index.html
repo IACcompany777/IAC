@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Гайка і Ключ: вигаданий автосервіс | Демо-проєкт IAC</title>
+  <meta name="description" content="Демо-сайт вигаданого автосервісу «Гайка і Ключ»: послуги, онлайн-запис у три кроки та контакти. Компанія не існує, форми нічого не надсилають.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#ffd100">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ffd100'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23111' stroke-width='6'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="demo-banner">
+    <p>Демо-проєкт IAC: компанія вигадана, форми нічого не надсилають. <a href="../../work.html">До портфоліо</a></p>
+  </div>
+  <a class="skip-link" href="#main">Перейти до основного вмісту</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="index.html">
+        <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#i-gear"/></svg>
+        <span>Гайка і Ключ</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+        <span class="menu-bars" aria-hidden="true"></span>
+        Меню
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Головна навігація" data-menu>
+        <ul>
+          <li><a href="index.html#services">Послуги</a></li>
+          <li><a href="index.html#booking">Запис</a></li>
+          <li><a href="index.html#how">Як це працює</a></li>
+          <li><a href="prices.html">Ціни</a></li>
+          <li><a href="index.html#contact">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="tag">Автосервіс у Вінниці</p>
+          <h1 id="hero-title">Ремонт авто без зайвих слів</h1>
+          <p class="hero-lead">«Гайка і Ключ» — вигадана майстерня. Запишіться онлайн за три кроки й порахуйте кошторис ще до візиту.</p>
+          <div class="btn-row">
+            <a class="btn btn-black" href="#booking">Записатися онлайн</a>
+            <a class="btn btn-white" href="prices.html">Дивитися ціни</a>
+          </div>
+        </div>
+        <div class="hero-poster">
+          <svg viewBox="0 0 560 450" role="img" aria-label="Контур автомобіля на підйомнику, дві шестерні та гайковий ключ">
+            <defs>
+              <pattern id="hero-hazard" width="44" height="44" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <rect width="44" height="44" fill="#ffd100"/>
+                <rect width="22" height="44" fill="#111"/>
+              </pattern>
+            </defs>
+            <g class="spin" fill="#ffd100" stroke="#111" stroke-width="3" stroke-linejoin="round"><use href="#i-gear" x="318" y="8" width="220" height="220"/></g>
+            <g class="spin-reverse" fill="#111"><use href="#i-gear" x="196" y="30" width="134" height="134"/></g>
+            <g transform="translate(26 26) rotate(28 90 90) scale(1.8)" fill="#111"><use href="#i-wrench" width="100" height="100"/></g>
+            <g transform="translate(20 176) scale(1.62)">
+              <use href="#i-car" width="320" height="130"/>
+            </g>
+            <rect x="90" y="362" width="380" height="16" fill="#111"/>
+            <rect x="256" y="378" width="48" height="32" fill="#111"/>
+            <rect x="0" y="412" width="560" height="38" fill="url(#hero-hazard)"/>
+            <rect x="0" y="408" width="560" height="6" fill="#111"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <div class="hazard" aria-hidden="true"></div>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="services-title">Послуги</h2>
+          <p>Шість напрямів робіт. Усі суми тут — зразкові демо-ціни, повний перелік є на <a href="prices.html">сторінці цін</a>.</p>
+        </div>
+        <ul class="card-grid">
+          <li class="card">
+            <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#i-oil"/></svg>
+            <h3>Технічне обслуговування</h3>
+            <p>Олива, фільтри, свічки запалювання та ремінь ГРМ.</p>
+            <p class="card-price">від 150 грн <span class="demo-note">демо-ціна</span></p>
+            <a class="card-link" href="#booking" data-book="to">Записатися<span class="visually-hidden"> на технічне обслуговування</span></a>
+          </li>
+          <li class="card">
+            <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#i-scan"/></svg>
+            <h3>Діагностика</h3>
+            <p>Зчитування помилок, перевірка ходової та акумулятора.</p>
+            <p class="card-price">від 200 грн <span class="demo-note">демо-ціна</span></p>
+            <a class="card-link" href="#booking" data-book="diagnostics">Записатися<span class="visually-hidden"> на діагностику</span></a>
+          </li>
+          <li class="card">
+            <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#i-brake"/></svg>
+            <h3>Гальма</h3>
+            <p>Заміна колодок, дисків і гальмівної рідини.</p>
+            <p class="card-price">від 600 грн <span class="demo-note">демо-ціна</span></p>
+            <a class="card-link" href="#booking" data-book="brakes">Записатися<span class="visually-hidden"> на ремонт гальм</span></a>
+          </li>
+          <li class="card">
+            <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#i-spring"/></svg>
+            <h3>Ходова</h3>
+            <p>Амортизатори, кульові опори, наконечники, розвал-сходження.</p>
+            <p class="card-price">від 500 грн <span class="demo-note">демо-ціна</span></p>
+            <a class="card-link" href="#booking" data-book="suspension">Записатися<span class="visually-hidden"> на ремонт ходової</span></a>
+          </li>
+          <li class="card">
+            <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#i-tire"/></svg>
+            <h3>Шини</h3>
+            <p>Шиномонтаж, балансування коліс і ремонт проколів.</p>
+            <p class="card-price">від 120 грн <span class="demo-note">демо-ціна</span></p>
+            <a class="card-link" href="#booking" data-book="tires">Записатися<span class="visually-hidden"> на шиномонтаж</span></a>
+          </li>
+          <li class="card">
+            <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#i-bolt"/></svg>
+            <h3>Електрика</h3>
+            <p>Акумулятор, генератор, освітлення та проводка.</p>
+            <p class="card-price">від 150 грн <span class="demo-note">демо-ціна</span></p>
+            <a class="card-link" href="#booking" data-book="electrics">Записатися<span class="visually-hidden"> на ремонт електрики</span></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="hazard" aria-hidden="true"></div>
+
+    <section class="section section-yellow" id="booking" aria-labelledby="booking-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="booking-title">Онлайн-запис</h2>
+          <p>Три кроки, а потім підсумок на екрані. Це демо: заявка нікуди не надсилається.</p>
+        </div>
+
+        <noscript><p class="noscript-note">Для онлайн-запису потрібен JavaScript. Без нього форма недоступна.</p></noscript>
+
+        <div class="bk" data-booking>
+          <div class="bk-top">
+            <svg class="bk-gear spin" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#i-gear"/></svg>
+            <p class="bk-status" role="status" aria-live="polite" data-bk-status>Крок 1 з 3: оберіть послугу</p>
+          </div>
+          <ol class="bk-progress" aria-label="Кроки запису">
+            <li class="is-current" aria-current="step" data-bk-progress><span class="bk-num" aria-hidden="true">1</span> Послуга</li>
+            <li data-bk-progress><span class="bk-num" aria-hidden="true">2</span> Час</li>
+            <li data-bk-progress><span class="bk-num" aria-hidden="true">3</span> Контакти</li>
+          </ol>
+          <p class="visually-hidden" aria-live="assertive" data-bk-alert></p>
+
+          <form class="bk-form" novalidate data-bk-form>
+            <div class="bk-panel" data-bk-panel>
+              <h3 tabindex="-1" data-bk-title>Яка робота потрібна?</h3>
+              <fieldset class="group" role="radiogroup" aria-required="true" aria-describedby="err-service" data-bk-service-group>
+                <legend class="visually-hidden">Оберіть послугу</legend>
+                <div class="choice-grid">
+                  <label class="choice"><input type="radio" name="service" value="to"><span>Технічне обслуговування</span></label>
+                  <label class="choice"><input type="radio" name="service" value="diagnostics"><span>Діагностика</span></label>
+                  <label class="choice"><input type="radio" name="service" value="brakes"><span>Гальма</span></label>
+                  <label class="choice"><input type="radio" name="service" value="suspension"><span>Ходова</span></label>
+                  <label class="choice"><input type="radio" name="service" value="tires"><span>Шини</span></label>
+                  <label class="choice"><input type="radio" name="service" value="electrics"><span>Електрика</span></label>
+                  <label class="choice choice-wide"><input type="radio" name="service" value="other"><span>Не знаю, потрібен огляд</span></label>
+                </div>
+                <p class="field-error" id="err-service" hidden></p>
+              </fieldset>
+            </div>
+
+            <div class="bk-panel" data-bk-panel hidden>
+              <h3 tabindex="-1" data-bk-title>Коли вам зручно?</h3>
+              <div class="field">
+                <label for="bk-date">Дата візиту</label>
+                <input type="date" id="bk-date" name="date" required aria-describedby="hint-date err-date">
+                <p class="field-hint" id="hint-date">Працюємо з понеділка по суботу. Запис відкрито на 60 днів наперед.</p>
+                <p class="field-error" id="err-date" hidden></p>
+              </div>
+              <fieldset class="group" role="radiogroup" aria-required="true" aria-describedby="err-slot" data-bk-slot-group>
+                <legend>Час</legend>
+                <div class="choice-grid choice-grid-slots">
+                  <label class="choice"><input type="radio" name="slot" value="09:00"><span>09:00</span></label>
+                  <label class="choice"><input type="radio" name="slot" value="10:30"><span>10:30</span></label>
+                  <label class="choice"><input type="radio" name="slot" value="12:00"><span>12:00</span></label>
+                  <label class="choice"><input type="radio" name="slot" value="13:30"><span>13:30</span></label>
+                  <label class="choice"><input type="radio" name="slot" value="15:00"><span>15:00</span></label>
+                  <label class="choice"><input type="radio" name="slot" value="16:30"><span>16:30</span></label>
+                </div>
+                <p class="field-error" id="err-slot" hidden></p>
+              </fieldset>
+            </div>
+
+            <div class="bk-panel" data-bk-panel hidden>
+              <h3 tabindex="-1" data-bk-title>Як з вами зв’язатися?</h3>
+              <p class="field-hint">Можна вводити вигадані дані: вони залишаються на цій сторінці й нікуди не надсилаються.</p>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="bk-name">Ім’я</label>
+                  <input type="text" id="bk-name" name="name" required autocomplete="name" aria-describedby="err-name">
+                  <p class="field-error" id="err-name" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="bk-phone">Телефон</label>
+                  <input type="tel" id="bk-phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+380 00 000 00 00" aria-describedby="err-phone">
+                  <p class="field-error" id="err-phone" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="bk-email">Електронна пошта (необов’язково)</label>
+                  <input type="email" id="bk-email" name="email" autocomplete="email" placeholder="hello@example.com" aria-describedby="err-email">
+                  <p class="field-error" id="err-email" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="bk-car">Автомобіль (необов’язково)</label>
+                  <input type="text" id="bk-car" name="car" placeholder="Наприклад: синій седан, 2015 рік">
+                </div>
+              </div>
+              <div class="field">
+                <label for="bk-note">Коментар (необов’язково)</label>
+                <textarea id="bk-note" name="note" rows="3"></textarea>
+              </div>
+            </div>
+
+            <div class="bk-panel" data-bk-panel hidden>
+              <h3 tabindex="-1" data-bk-title>Підсумок запису</h3>
+              <p class="bk-notice"><strong>Заявку не надіслано.</strong> Це демо: дані нікуди не передаються й не зберігаються, а після оновлення сторінки зникнуть.</p>
+              <dl class="bk-summary">
+                <div><dt>Послуга</dt><dd data-sum="service"></dd></div>
+                <div><dt>Дата</dt><dd data-sum="date"></dd></div>
+                <div><dt>Час</dt><dd data-sum="slot"></dd></div>
+                <div><dt>Ім’я</dt><dd data-sum="name"></dd></div>
+                <div><dt>Телефон</dt><dd data-sum="phone"></dd></div>
+                <div><dt>Пошта</dt><dd data-sum="email"></dd></div>
+                <div><dt>Автомобіль</dt><dd data-sum="car"></dd></div>
+                <div><dt>Коментар</dt><dd data-sum="note"></dd></div>
+              </dl>
+              <div class="btn-row">
+                <button class="btn btn-white" type="button" data-bk-edit>Змінити дані</button>
+                <button class="btn btn-black" type="button" data-bk-restart>Почати спочатку</button>
+              </div>
+            </div>
+
+            <div class="bk-nav" data-bk-nav>
+              <button class="btn btn-white" type="button" data-bk-back hidden>Назад</button>
+              <button class="btn" type="submit" data-bk-next>Далі</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="hazard" aria-hidden="true"></div>
+
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="how-title">Як це працює</h2>
+          <p>Від запису до готового авто — чотири зрозумілі етапи.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Запис</h3>
+            <p>Обираєте послугу, дату й зручний час онлайн.</p>
+          </li>
+          <li>
+            <h3>Огляд</h3>
+            <p>Приїжджаєте, а майстер оглядає авто й пояснює, що потрібно зробити.</p>
+          </li>
+          <li>
+            <h3>Кошторис</h3>
+            <p>Узгоджуємо перелік робіт і вартість до початку ремонту.</p>
+          </li>
+          <li>
+            <h3>Ремонт</h3>
+            <p>Виконуємо погоджені роботи й повідомляємо, коли авто готове.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="hazard" aria-hidden="true"></div>
+
+    <section class="section section-yellow" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-head">
+            <h2 id="contact-title">Контакти</h2>
+            <p>Усі контакти вигадані, тож телефонувати чи писати на них не варто.</p>
+          </div>
+          <dl class="contact-list">
+            <div><dt>Телефон</dt><dd><a href="tel:+380000000000">+380 00 000 00 00</a></dd></div>
+            <div><dt>Пошта</dt><dd><a href="mailto:hello@example.com">hello@example.com</a></dd></div>
+            <div><dt>Адреса</dt><dd>вул. Вигадана, 3, Вінниця</dd></div>
+            <div><dt>Графік</dt><dd>Пн–Сб, 09:00–18:00</dd></div>
+          </dl>
+        </div>
+        <div class="map-card">
+          <svg viewBox="0 0 480 360" role="img" aria-label="Умовна схема проїзду: вигадана вулиця з позначкою майстерні">
+            <rect width="480" height="360" fill="#fff"/>
+            <g fill="none" stroke="#111" stroke-width="26">
+              <path d="M-10 236H490"/>
+              <path d="M132 -10V370"/>
+              <path d="M340 -10 300 370"/>
+            </g>
+            <g fill="none" stroke="#ffd100" stroke-width="4" stroke-dasharray="16 14">
+              <path d="M-10 236H490"/>
+              <path d="M132 -10V370"/>
+              <path d="M340 -10 300 370"/>
+            </g>
+            <rect x="170" y="42" width="120" height="84" fill="#ffd100" stroke="#111" stroke-width="5"/>
+            <rect x="24" y="44" width="72" height="150" fill="#fff" stroke="#111" stroke-width="5"/>
+            <rect x="372" y="276" width="84" height="60" fill="#fff" stroke="#111" stroke-width="5"/>
+            <g transform="translate(182 120)">
+              <path d="M48 96C48 96 6 54 6 34a42 42 0 0 1 84 0c0 20-42 62-42 62Z" fill="#111"/>
+              <svg x="20" y="6" width="56" height="56" viewBox="0 0 100 100" fill="#ffd100"><use href="#i-gear"/></svg>
+            </g>
+            <text x="20" y="284" class="map-label">вул. Вигадана, 3</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="hazard" aria-hidden="true"></div>
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-logo">Гайка і Ключ</p>
+        <p>Вигадана майстерня для демонстрації сайту. Назва, контакти й ціни вигадані.</p>
+      </div>
+      <nav aria-label="Навігація у футері">
+        <ul class="footer-nav">
+          <li><a href="index.html#services">Послуги</a></li>
+          <li><a href="index.html#booking">Запис</a></li>
+          <li><a href="prices.html">Ціни</a></li>
+          <li><a href="index.html#contact">Контакти</a></li>
+        </ul>
+      </nav>
+      <address>
+        <a href="tel:+380000000000">+380 00 000 00 00</a><br>
+        <a href="mailto:hello@example.com">hello@example.com</a><br>
+        вул. Вигадана, 3, Вінниця
+      </address>
+    </div>
+    <div class="container footer-credit">
+      <p><a href="../../index.html">Сайт розроблено IAC</a></p>
+    </div>
+  </footer>
+
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="i-gear" viewBox="0 0 100 100">
+      <path fill-rule="evenodd" d="M86.5,43.9 97.8,45.4 97.8,54.6 86.5,56.1 84.7,63 93.7,69.9 89.1,77.9 78.6,73.5 73.5,78.6 77.9,89.1 69.9,93.7 63,84.7 56.1,86.5 54.6,97.8 45.4,97.8 43.9,86.5 37,84.7 30.1,93.7 22.1,89.1 26.5,78.6 21.4,73.5 10.9,77.9 6.3,69.9 15.3,63 13.5,56.1 2.2,54.6 2.2,45.4 13.5,43.9 15.3,37 6.3,30.1 10.9,22.1 21.4,26.5 26.5,21.4 22.1,10.9 30.1,6.3 37,15.3 43.9,13.5 45.4,2.2 54.6,2.2 56.1,13.5 63,15.3 69.9,6.3 77.9,10.9 73.5,21.4 78.6,26.5 89.1,22.1 93.7,30.1 84.7,37ZM50 33a17 17 0 1 0 0 34a17 17 0 1 0 0-34Z"/>
+    </symbol>
+    <symbol id="i-wrench" viewBox="0 0 100 100">
+      <path fill-rule="evenodd" d="M60.34 43A19 19 0 0 1 94.73 41H76V59H94.73A19 19 0 0 1 60.34 57H34.39A16 16 0 1 1 34.39 43ZM20 41l7.8 4.5v9L20 59l-7.8-4.5v-9Z"/>
+    </symbol>
+    <symbol id="i-car" viewBox="0 0 320 130">
+      <path d="M14 92V72Q14 62 28 60L74 54 112 24Q118 18 130 18H196Q208 18 216 26L246 54 292 62Q306 65 306 78V92H276A26 26 0 0 0 224 92H100A26 26 0 0 0 48 92Z" fill="#fff" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M94 54 118 32Q122 28 130 28H158V54Z" fill="#ffd100" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M168 28H194Q202 28 208 34L228 54H168Z" fill="#ffd100" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M176 66H194M286 72H304M16 72H30" fill="none" stroke="#111" stroke-width="6"/>
+      <circle cx="74" cy="94" r="21" fill="#111"/>
+      <circle cx="74" cy="94" r="9" fill="#ffd100"/>
+      <circle cx="250" cy="94" r="21" fill="#111"/>
+      <circle cx="250" cy="94" r="9" fill="#ffd100"/>
+    </symbol>
+    <symbol id="i-oil" viewBox="0 0 64 64">
+      <path d="M32 6S12 30 12 42a20 20 0 0 0 40 0C52 30 32 6 32 6Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M22 42a10 10 0 0 0 10 10" fill="none" stroke="currentColor" stroke-width="5"/>
+    </symbol>
+    <symbol id="i-scan" viewBox="0 0 64 64">
+      <rect x="6" y="12" width="52" height="40" fill="none" stroke="currentColor" stroke-width="6"/>
+      <path d="M13 33h9l5-10 9 20 5-10h10" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-brake" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="25" fill="none" stroke="currentColor" stroke-width="6"/>
+      <circle cx="32" cy="32" r="8" fill="currentColor"/>
+      <path d="M32 3a29 29 0 0 1 29 29H47A15 15 0 0 0 32 17Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-spring" viewBox="0 0 64 64">
+      <path d="M14 6h36M14 58h36M46 6 18 16l28 10-28 10 28 10-28 12" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-tire" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="23" fill="none" stroke="currentColor" stroke-width="12"/>
+      <circle cx="32" cy="32" r="6" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-bolt" viewBox="0 0 64 64">
+      <path d="M38 3 10 37h17l-4 24 31-37H36Z" fill="currentColor"/>
+    </symbol>
+  </svg>
+</body>
+</html>

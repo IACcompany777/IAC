@@ -10,8 +10,35 @@ window.SITE = {
     github: "", // full link to your GitHub profile
   },
 
-  // Add real projects only. Copy one block for each new project.
+  // Add real projects only, and label demos as demos. Copy one block for each new project.
   projects: [
+    {
+      title: L("Demo: Tepla Skorynka bakery", "Демо: пекарня «Тепла Скоринка»"),
+      text: L(
+        "A one-page site for a fictional bakery, with a filterable menu and a working order basket.",
+        "Односторінковий сайт вигаданої пекарні з фільтром меню та робочим кошиком замовлення."
+      ),
+      tags: "HTML · CSS · JavaScript",
+      link: "demos/bakery/index.html",
+    },
+    {
+      title: L("Demo: Tykha Kimnata interior studio", "Демо: студія інтер'єрів «Тиха Кімната»"),
+      text: L(
+        "A four-page site for a fictional studio, with a filterable gallery, a before/after slider, and a cost estimator.",
+        "Чотиристорінковий сайт вигаданої студії з фільтром галереї, слайдером «до і після» та калькулятором вартості."
+      ),
+      tags: "HTML · CSS · JavaScript",
+      link: "demos/interior/index.html",
+    },
+    {
+      title: L("Demo: Hayka i Kliuch car repair", "Демо: автосервіс «Гайка і Ключ»"),
+      text: L(
+        "A two-page site for a fictional repair shop, with step-by-step online booking and a live price estimate.",
+        "Двосторінковий сайт вигаданого автосервісу з покроковим онлайн-записом і живим кошторисом."
+      ),
+      tags: "HTML · CSS · JavaScript",
+      link: "demos/autoservice/index.html",
+    },
     {
       title: L("IAC website", "Сайт IAC"),
       text: L(
@@ -279,8 +306,8 @@ window.SITE = {
         {
           type: "hero",
           eyebrow: L("Work", "Роботи"),
-          title: L("Real projects only.", "Лише справжні проєкти."),
-          lead: L("I'm building this portfolio one finished project at a time.", "Я наповнюю це портфоліо поступово, по одному завершеному проєкту."),
+          title: L("Working sites you can open.", "Робочі сайти, які можна відкрити."),
+          lead: L("The demos use fictional companies to show what I can build. They are not client projects.", "Демо створені для вигаданих компаній, щоб показати, що я вмію. Це не проєкти для клієнтів."),
         },
         { type: "projects", title: L("Projects", "Проєкти") },
         {

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контакти | Демо-проєкт IAC</title>
+<meta name="description" content="Демонстраційна контактна форма вигаданої студії «Тиха Кімната»: поля перевіряються в браузері, нічого не надсилається.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f3efe7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f3efe7'/%3E%3Cpath d='M7 26V6h19' fill='none' stroke='%232a2e29' stroke-width='3'/%3E%3Cpath d='M7 26A19 20 0 0 1 26 6' fill='none' stroke='%23a54a2e' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.className = 'js';</script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="demo-banner" role="note"><p>Демо-проєкт IAC: компанія вигадана, форми нічого не надсилають. <a href="../../work.html">До портфоліо</a></p></div>
+<a class="skip-link" href="#main">Перейти до основного змісту</a>
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="index.html">
+      <svg viewBox="0 0 28 28" aria-hidden="true" focusable="false"><path class="logo__wall" d="M3 26V3h23"/><path class="logo__door" d="M3 26A23 23 0 0 1 26 3"/></svg>
+      <span>Тиха Кімната</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Меню</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Основна навігація">
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="projects.html">Концепти</a></li>
+        <li><a href="services.html">Послуги</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <div class="wrap page-head">
+    <div class="page-head__in">
+      <p class="eyebrow">Контакти</p>
+      <h1>Розкажіть про вашу кімнату</h1>
+      <p class="lede">Кілька рядків про те, що заважає, уже достатньо для початку розмови. На цьому демо-сайті розмова, щоправда, на формі й закінчиться.</p>
+    </div>
+  </div>
+
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <dl class="contact-list">
+        <div>
+          <dt>Телефон (заглушка)</dt>
+          <dd>+380 00 000 00 00</dd>
+        </div>
+        <div>
+          <dt>Пошта (заглушка)</dt>
+          <dd>hello@example.com</dd>
+        </div>
+        <div>
+          <dt>Адреса (вигадана)</dt>
+          <dd>вул. Вигадана, 2, Вінниця</dd>
+        </div>
+      </dl>
+      <svg class="contact-art" viewBox="0 0 340 300" aria-hidden="true" focusable="false">
+        <rect class="r-wall" width="340" height="300"/>
+        <rect class="r-floor" y="248" width="340" height="52"/>
+        <path class="r-ln" d="M0 248H340"/>
+        <rect class="r-sky r-st" x="170" y="50" width="110" height="198"/>
+        <path class="r-sage-l r-st" d="M170 50 232 66V264L170 248Z"/>
+        <circle class="r-terra" cx="220" cy="164" r="4"/>
+        <path class="r-sun" d="M170 248H280L320 300H170Z"/>
+        <rect class="r-sage r-st" x="54" y="130" width="62" height="74" rx="8"/>
+        <rect class="r-sage-d r-st" x="44" y="190" width="82" height="18"/>
+        <path class="r-ln" d="M54 208 48 262M116 208 122 262"/>
+      </svg>
+    </div>
+
+    <div class="form-panel reveal">
+      <p class="form-panel__note">Це демо-форма. Вона лише перевіряє поля у вашому браузері: нічого не надсилається й не зберігається.</p>
+
+      <div class="form-status" id="form-status" role="status" tabindex="-1" hidden>
+        <strong>Форму заповнено правильно</strong>
+        Це демо, тому нічого не надіслано й не збережено. Поля очищено.
+      </div>
+
+      <form id="contact-form" novalidate onsubmit="return false">
+        <p class="form-required">Усі поля, крім телефону, обов’язкові.</p>
+
+        <div class="field">
+          <label for="name">Ім’я</label>
+          <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+          <p class="field__error" id="name-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Електронна пошта</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="hello@example.com" required aria-describedby="email-error">
+          <p class="field__error" id="email-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="phone">Телефон (необов’язково)</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+380 00 000 00 00" aria-describedby="phone-error">
+          <p class="field__error" id="phone-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="room">Тип кімнати</label>
+          <select id="room" name="room" required aria-describedby="room-error">
+            <option value="">Оберіть зі списку</option>
+            <option value="living">Вітальня</option>
+            <option value="bedroom">Спальня</option>
+            <option value="kitchen">Кухня</option>
+            <option value="bath">Ванна</option>
+            <option value="other">Інше</option>
+          </select>
+          <p class="field__error" id="room-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="message">Що хочете змінити?</label>
+          <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+          <p class="field__error" id="message-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label class="check" for="consent">
+            <input id="consent" name="consent" type="checkbox" required aria-describedby="consent-error">
+            <span>Я розумію, що це демо-форма і мої дані нікуди не надсилаються.</span>
+          </label>
+          <p class="field__error" id="consent-error" hidden></p>
+        </div>
+
+        <button class="btn" type="submit">Перевірити форму</button>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__brand">Тиха Кімната</p>
+        <p class="site-footer__about">Вигадана студія інтер’єрів. Усі кімнати на сайті&nbsp;— намальовані концепти.</p>
+      </div>
+      <div>
+        <p class="site-footer__title">Розділи</p>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="projects.html">Концепти</a></li>
+          <li><a href="services.html">Послуги</a></li>
+          <li><a href="contact.html">Контакти</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="site-footer__title">Контакти-заглушки</p>
+        <p>+380 00 000 00 00</p>
+        <p>hello@example.com</p>
+        <p>вул. Вигадана, 2, Вінниця</p>
+      </div>
+    </div>
+    <p class="site-footer__bottom"><a href="../../index.html">Сайт розроблено IAC</a></p>
+  </div>
+</footer>
+</body>
+</html>

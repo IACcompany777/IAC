@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тепла Скоринка | Демо-проєкт IAC</title>
+  <meta name="description" content="Тепла Скоринка: вигадана пекарня, демо-проєкт IAC. Меню з фільтром за категоріями, робочий кошик, години роботи й контакти. Форми нічого не надсилають.">
+  <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#6f1616">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%238e1f1f'/%3E%3Cpath d='M12 42c0-14 9-24 20-24s20 10 20 24c0 2-2 4-4 4H16c-2 0-4-2-4-4Z' fill='%23f7eedd'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="demo-banner on-dark">
+    <p>Демо-проєкт IAC: компанія вигадана, форми нічого не надсилають. <a href="../../work.html">До портфоліо</a></p>
+  </div>
+
+  <a class="skip-link" href="#main">Перейти до вмісту</a>
+
+  <!-- Спрайт із малюнками для меню -->
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-rye" viewBox="0 0 64 64">
+        <g fill="#a8703a" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 38c0-14 12-22 26-22s26 8 26 22c0 7-9 10-26 10S6 45 6 38Z"/>
+          <path fill="none" stroke="#efd3a3" d="M20 23l5 17M31 21l4 20M42 23l3 16"/>
+          <path fill="none" d="M12 45c8 3 32 3 40 0"/>
+        </g>
+      </symbol>
+      <symbol id="i-round" viewBox="0 0 64 64">
+        <g fill="#d8a86a" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 44c0-18 10-30 24-30s24 12 24 30c0 3-2 5-5 5H13c-3 0-5-2-5-5Z"/>
+          <path fill="none" d="M21 21c-2 8-2 16 0 23M32 18v27M43 21c2 8 2 16 0 23"/>
+        </g>
+      </symbol>
+      <symbol id="i-seed" viewBox="0 0 64 64">
+        <g fill="#c08f55" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 30c-4-2-4-14 8-14h28c12 0 12 12 8 14v16c0 2-1 3-3 3H13c-2 0-3-1-3-3Z"/>
+          <path fill="none" d="M10 30h44"/>
+          <g fill="#f4e4c3" stroke-width="1">
+            <ellipse cx="20" cy="23" rx="2.6" ry="1.5" transform="rotate(-25 20 23)"/>
+            <ellipse cx="31" cy="21" rx="2.6" ry="1.5" transform="rotate(20 31 21)"/>
+            <ellipse cx="43" cy="24" rx="2.6" ry="1.5" transform="rotate(-15 43 24)"/>
+            <ellipse cx="25" cy="38" rx="2.6" ry="1.5" transform="rotate(30 25 38)"/>
+            <ellipse cx="39" cy="40" rx="2.6" ry="1.5" transform="rotate(-30 39 40)"/>
+          </g>
+        </g>
+      </symbol>
+      <symbol id="i-baguette" viewBox="0 0 64 64">
+        <g transform="rotate(-32 32 32)" fill="#d8a86a" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="22" width="62" height="20" rx="10"/>
+          <path fill="none" d="M13 25l6 14M25 25l6 14M37 25l6 14M49 25l5 12"/>
+        </g>
+      </symbol>
+      <symbol id="i-croissant" viewBox="0 0 64 64">
+        <g fill="#dfae68" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 44C6 26 20 14 32 14s26 12 26 30c0 5-5 6-8 2-4-7-10-11-18-11s-14 4-18 11c-3 4-8 3-8-2Z"/>
+          <path fill="none" d="M23 37c-2-7-2-15 1-21M41 37c2-7 2-15-1-21M13 45c-2-6-2-14 1-21M51 45c2-6 2-14-1-21"/>
+        </g>
+      </symbol>
+      <symbol id="i-pie" viewBox="0 0 64 64">
+        <g fill="#d8a86a" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 40c0-13 12-22 27-22s27 9 27 22c0 5-4 7-8 7H13c-4 0-8-2-8-7Z"/>
+          <path fill="none" d="M12 41c6 2 34 2 40 0M16 42l-1 4M24 43v4M32 43v4M40 43v4M48 42l1 4"/>
+          <path fill="none" d="M26 28c3-2 9-2 12 0"/>
+        </g>
+      </symbol>
+      <symbol id="i-bun" viewBox="0 0 64 64">
+        <g fill="#dfae68" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="32" cy="33" r="24"/>
+          <path fill="none" d="M32 33c3-3 8 0 6 5s-11 5-14-2 3-16 12-15 15 9 13 18"/>
+          <g fill="#3a2415" stroke="none">
+            <circle cx="16" cy="26" r="1.3"/><circle cx="21" cy="19" r="1.3"/><circle cx="14" cy="36" r="1.3"/>
+            <circle cx="44" cy="46" r="1.3"/><circle cx="33" cy="50" r="1.3"/><circle cx="22" cy="46" r="1.3"/>
+            <circle cx="29" cy="31" r="1.1"/><circle cx="35" cy="28" r="1.1"/>
+          </g>
+        </g>
+      </symbol>
+      <symbol id="i-pampushky" viewBox="0 0 64 64">
+        <g fill="#e2b676" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="21" cy="22" r="14"/>
+          <circle cx="43" cy="22" r="14"/>
+          <circle cx="21" cy="43" r="14"/>
+          <circle cx="43" cy="43" r="14"/>
+          <g fill="none" stroke="#4f6b35" stroke-width="1.6">
+            <path d="M17 19l3 2M25 24l2-2M41 19l3 2M47 25l2-2M17 41l3 2M25 45l2-2M41 41l3 2M47 46l2-2"/>
+          </g>
+        </g>
+      </symbol>
+      <symbol id="i-medivnyk" viewBox="0 0 64 64">
+        <g fill="#f4e4c3" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 28L34 13l23 15Z" fill="#c98f3c"/>
+          <path d="M7 28h50v23H7Z"/>
+          <path fill="none" stroke="#a8703a" stroke-width="3.4" stroke-linecap="butt" d="M9 33.5h46M9 39.5h46M9 45.5h46"/>
+        </g>
+      </symbol>
+      <symbol id="i-roll" viewBox="0 0 64 64">
+        <g fill="#d8a86a" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 18h32v30H12C4 48 4 18 12 18Z"/>
+          <ellipse cx="44" cy="33" rx="14" ry="15" fill="#f4e4c3"/>
+          <path fill="none" stroke="#3a2415" stroke-width="2.6" d="M44 33c2-2 6 0 5 4s-9 5-12-1 2-13 9-13 13 8 10 15"/>
+          <path fill="none" d="M16 24c-3 6-3 12 0 18M25 22c-2 6-2 16 0 22"/>
+        </g>
+      </symbol>
+      <symbol id="i-cookies" viewBox="0 0 64 64">
+        <g fill="#d8a86a" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="25" cy="26" r="19"/>
+          <circle cx="44" cy="43" r="15" fill="#c98f3c"/>
+          <g fill="#5b3a1e" stroke="none">
+            <circle cx="18" cy="20" r="1.8"/><circle cx="29" cy="17" r="1.5"/><circle cx="16" cy="31" r="1.5"/><circle cx="27" cy="27" r="1.8"/>
+            <circle cx="40" cy="38" r="1.6"/><circle cx="49" cy="42" r="1.8"/><circle cx="42" cy="49" r="1.5"/>
+          </g>
+        </g>
+      </symbol>
+      <symbol id="i-verhuny" viewBox="0 0 64 64">
+        <g fill="#e2b676" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M32 7c4 0 22 19 23 25 0 5-19 25-23 25S9 37 9 32C9 27 28 7 32 7Z"/>
+          <path d="M24 37c3-8 10-13 16-11-3 8-10 13-16 11Z" fill="#a8703a"/>
+          <g fill="#fffaf0" stroke="none">
+            <circle cx="30" cy="17" r="1.3"/><circle cx="20" cy="27" r="1.3"/><circle cx="42" cy="38" r="1.3"/>
+            <circle cx="33" cy="47" r="1.3"/><circle cx="44" cy="27" r="1.1"/><circle cx="23" cy="42" r="1.1"/>
+          </g>
+        </g>
+      </symbol>
+      <symbol id="i-list" viewBox="0 0 64 64">
+        <g fill="#fffaf0" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 6h36v48l-6-4-6 4-6-4-6 4-6-4-6 4Z"/>
+          <path fill="none" d="M21 17h22M21 26h22M21 35h13"/>
+          <path fill="none" stroke="#8e1f1f" stroke-width="2.6" d="M38 37l3 3 6-7"/>
+        </g>
+      </symbol>
+      <symbol id="i-basket" viewBox="0 0 64 64">
+        <g fill="#d8a86a" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path fill="none" d="M17 30C17 4 47 4 47 30"/>
+          <path d="M7 29h50l-6 26H13Z"/>
+          <path fill="none" d="M10 37h44M12 46h40M22 29l2 26M32 29v26M42 29l-2 26"/>
+        </g>
+      </symbol>
+      <symbol id="i-bag" viewBox="0 0 64 64">
+        <g fill="#d8a86a" stroke="#5b3a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <g transform="rotate(14 40 20)">
+            <rect x="33" y="2" width="13" height="34" rx="6.5"/>
+            <path fill="none" d="M36 9l7 3M36 17l7 3"/>
+          </g>
+          <path fill="#efe0c4" d="M14 24l5 3 5-3 5 3 5-3 5 3 5-3 6 3 3 31H11Z"/>
+          <path fill="none" stroke="#8e1f1f" d="M24 42c0-6 3-9 8-9s8 3 8 9c0 1-1 2-2 2H26c-1 0-2-1-2-2Z"/>
+        </g>
+      </symbol>
+      <symbol id="i-ornament" viewBox="0 0 120 16">
+        <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <path d="M2 8h38M80 8h38"/>
+          <path d="M40 8c4-5 9-5 13 0-4 5-9 5-13 0ZM80 8c-4-5-9-5-13 0 4 5 9 5 13 0Z"/>
+          <path fill="currentColor" d="M60 3l5 5-5 5-5-5Z"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#top">
+        <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#i-round"/></svg>
+        <span>Тепла Скоринка</span>
+      </a>
+      <nav aria-label="Розділи сторінки">
+        <ul class="nav">
+          <li><a href="#menu">Меню</a></li>
+          <li><a href="#basket">Кошик <span class="nav__count" id="nav-count" hidden></span></a></li>
+          <li><a href="#how">Як замовити</a></li>
+          <li><a href="#hours">Години</a></li>
+          <li><a href="#contact">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="awning" aria-hidden="true"><div class="awning__cloth"></div></div>
+
+  <main id="main">
+
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="kicker">Пекарня на заквасці · Вінниця</p>
+          <h1 id="hero-title">Тепла <em>Скоринка</em></h1>
+          <p class="hero__lead">Хліб повільного бродіння, листкова випічка й солодке до чаю. Печемо невеликими партіями, щоб скоринка ще була теплою, коли ви її заберете.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#menu">Дивитися меню</a>
+            <a class="btn btn--ghost" href="#hours">Коли ми відчинені</a>
+          </div>
+        </div>
+
+        <svg class="hero__art" viewBox="0 0 560 480" role="img" aria-label="Намальовані круглий хліб, круасан і колоски пшениці на дерев’яній дошці" focusable="false">
+          <defs>
+            <linearGradient id="g-crust" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#c98a45"/>
+              <stop offset=".55" stop-color="#a8642b"/>
+              <stop offset="1" stop-color="#7a431c"/>
+            </linearGradient>
+            <linearGradient id="g-croissant" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#eec27e"/>
+              <stop offset="1" stop-color="#c17f38"/>
+            </linearGradient>
+            <pattern id="p-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+              <path d="M0 0v7" stroke="#5b3a1e" stroke-width="1.2" opacity=".35"/>
+            </pattern>
+            <path id="grain" d="M0 0C7-6 7-17 0-24-7-17-7-6 0 0Z"/>
+            <path id="seal-arc" d="M0-43A43 43 0 1 1-.01-43"/>
+          </defs>
+
+          <circle cx="285" cy="240" r="208" fill="#efe0c4"/>
+          <circle cx="285" cy="240" r="192" fill="none" stroke="#a8703a" stroke-width="1.5" stroke-dasharray="2 8" stroke-linecap="round"/>
+
+          <!-- Колоски -->
+          <g fill="#c98f3c" stroke="#5b3a1e" stroke-width="1.6" stroke-linejoin="round">
+            <g transform="translate(130 380) rotate(-13)">
+              <path fill="none" d="M0 0V-238"/>
+              <use href="#grain" transform="translate(0 -120) rotate(-30)"/><use href="#grain" transform="translate(0 -120) rotate(30)"/>
+              <use href="#grain" transform="translate(0 -142) rotate(-30)"/><use href="#grain" transform="translate(0 -142) rotate(30)"/>
+              <use href="#grain" transform="translate(0 -164) rotate(-30)"/><use href="#grain" transform="translate(0 -164) rotate(30)"/>
+              <use href="#grain" transform="translate(0 -186) rotate(-28)"/><use href="#grain" transform="translate(0 -186) rotate(28)"/>
+              <use href="#grain" transform="translate(0 -208) rotate(-24)"/><use href="#grain" transform="translate(0 -208) rotate(24)"/>
+              <use href="#grain" transform="translate(0 -226)"/>
+            </g>
+            <g transform="translate(120 380) rotate(-30) scale(.82)">
+              <path fill="none" d="M0 0V-238"/>
+              <use href="#grain" transform="translate(0 -142) rotate(-30)"/><use href="#grain" transform="translate(0 -142) rotate(30)"/>
+              <use href="#grain" transform="translate(0 -164) rotate(-30)"/><use href="#grain" transform="translate(0 -164) rotate(30)"/>
+              <use href="#grain" transform="translate(0 -186) rotate(-28)"/><use href="#grain" transform="translate(0 -186) rotate(28)"/>
+              <use href="#grain" transform="translate(0 -208) rotate(-24)"/><use href="#grain" transform="translate(0 -208) rotate(24)"/>
+              <use href="#grain" transform="translate(0 -226)"/>
+            </g>
+          </g>
+
+          <!-- Пара -->
+          <g class="steam" fill="none" stroke="#a8703a" stroke-width="3" stroke-linecap="round">
+            <path d="M222 138c-12-14 12-24 0-38s12-24 0-38"/>
+            <path d="M272 126c-12-14 12-24 0-38s12-24 0-38"/>
+            <path d="M322 138c-12-14 12-24 0-38s12-24 0-38"/>
+          </g>
+
+          <!-- Дошка -->
+          <path d="M52 386c0-8 6-14 14-14h440c8 0 14 6 14 14s-6 14-14 14H66c-8 0-14-6-14-14Z" fill="#a8703a" stroke="#5b3a1e" stroke-width="2.5"/>
+          <path d="M84 381h120M240 390h150M420 381h70" fill="none" stroke="#5b3a1e" stroke-width="1.5" stroke-linecap="round" opacity=".55"/>
+
+          <!-- Хліб -->
+          <g transform="translate(-22 24)">
+            <path d="M92 300c0-110 96-160 178-160 90 0 172 60 172 160 0 36-42 48-176 48S92 336 92 300Z" fill="url(#g-crust)" stroke="#5b3a1e" stroke-width="3"/>
+            <path d="M92 300c0 36 40 48 174 48s176-12 176-48c0-14-2-27-6-40-14 44-70 58-170 58-96 0-154-12-168-54-4 11-6 23-6 36Z" fill="url(#p-hatch)"/>
+            <g fill="#f3dcae" stroke="#5b3a1e" stroke-width="2" stroke-linejoin="round">
+              <path d="M170 186c30 28 44 72 34 124-20-40-32-80-34-124Z"/>
+              <path d="M240 160c32 34 46 88 32 156-22-50-34-104-32-156Z"/>
+              <path d="M314 166c28 36 38 88 22 146-18-48-26-98-22-146Z"/>
+              <path d="M378 200c18 28 24 62 12 100-12-34-16-68-12-100Z"/>
+            </g>
+            <g fill="#fffaf0" opacity=".7">
+              <circle cx="148" cy="232" r="2.2"/><circle cx="134" cy="262" r="1.6"/><circle cx="224" cy="178" r="2"/>
+              <circle cx="296" cy="170" r="1.8"/><circle cx="288" cy="214" r="1.6"/><circle cx="362" cy="194" r="2.2"/>
+              <circle cx="356" cy="240" r="1.6"/><circle cx="410" cy="240" r="2"/><circle cx="160" cy="206" r="1.5"/>
+            </g>
+          </g>
+
+          <!-- Круасан -->
+          <g transform="translate(322 248) scale(2.7) rotate(-6 32 32)" stroke="#5b3a1e" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 44C6 26 20 14 32 14s26 12 26 30c0 5-5 6-8 2-4-7-10-11-18-11s-14 4-18 11c-3 4-8 3-8-2Z" fill="url(#g-croissant)"/>
+            <path fill="none" d="M23 36c-2-7-2-14 1-20M41 36c2-7 2-14-1-20M13 45c-2-6-2-14 1-21M51 45c2-6 2-14-1-21"/>
+            <path fill="none" stroke="#fffaf0" stroke-width=".9" opacity=".7" d="M28 18c3-1 6-1 8 0M17 23c1-1 2-2 3-2"/>
+          </g>
+
+          <!-- Печатка -->
+          <g transform="translate(474 96)">
+            <circle r="64" fill="#8e1f1f"/>
+            <circle r="57" fill="none" stroke="#f7eedd" stroke-width="1.5"/>
+            <circle r="29" fill="none" stroke="#f7eedd" stroke-width="1.5"/>
+            <g class="seal-ring">
+              <circle r="56" fill="none"/>
+              <text class="seal-text" fill="#f7eedd"><textPath href="#seal-arc" textLength="262" lengthAdjust="spacing">ЗАКВАСКА · БОРОШНО · ВОДА · СІЛЬ ·</textPath></text>
+            </g>
+            <g fill="#f7eedd">
+              <use href="#grain" transform="translate(0 16)"/>
+              <use href="#grain" transform="translate(0 16) rotate(-34) scale(.85)"/>
+              <use href="#grain" transform="translate(0 16) rotate(34) scale(.85)"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <div class="wrap menu-layout">
+
+      <section class="sheet" id="menu" aria-labelledby="menu-title">
+        <header class="sheet__head">
+          <p class="kicker">Сьогодні в печі</p>
+          <h2 id="menu-title">Меню</h2>
+          <svg class="ornament" aria-hidden="true" focusable="false"><use href="#i-ornament"/></svg>
+          <p class="sheet__note">Ціни в гривнях. Вага орієнтовна, адже кожен хліб трохи інший.</p>
+        </header>
+
+        <div class="filters" role="group" aria-label="Фільтр меню за категоріями">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">Усе</button>
+          <button class="filter" type="button" data-filter="bread" aria-pressed="false">Хліб</button>
+          <button class="filter" type="button" data-filter="pastry" aria-pressed="false">Випічка</button>
+          <button class="filter" type="button" data-filter="sweet" aria-pressed="false">Солодке</button>
+        </div>
+        <p class="filters__status" id="filter-status" role="status">Показано все меню: 12 позицій.</p>
+
+        <div class="menu-list" id="menu-list">
+
+          <section class="menu-group reveal" data-category="bread" aria-labelledby="cat-bread">
+            <h3 class="menu-group__title" id="cat-bread">Хліб</h3>
+            <ul class="items">
+              <li class="item" data-id="rye" data-name="Житній на заквасці" data-price="68">
+                <svg class="item__art" aria-hidden="true" focusable="false"><use href="#i-rye"/></svg>
+                <div class="item__body">
+                  <div class="item__line">
+                    <h4 class="item__name">Житній на заквасці</h4>
+                    <span class="item__dots" aria-hidden="true"></span>
+                    <data class="item__price" value="68">68&nbsp;грн</data>
+                  </div>
+                  <p class="item__desc">Щільний м’якуш, кмин і темна хрустка скоринка. <span class="item__weight">650&nbsp;г</span></p>
+                </div>
+                <div class="item__actions">
+                  <button class="btn-add" type="button" data-add aria-label="Додати до кошика: Житній на заквасці">Додати</button>
+                </div>
+              </li>
+              <li class="item" data-id="wheat" data-name="Пшеничний подовий" data-price="58">
+                <svg class="item__art" aria-hidden="true" focusable="false"><use href="#i-round"/></svg>
+                <div class="item__body">
+                  <div class="item__line">
+                    <h4 class="item__name">Пшеничний подовий</h4>
+                    <span class="item__dots" aria-hidden="true"></span>
+                    <data class="item__price" value="58">58&nbsp;грн</data>
+                  </div>
+                  <p class="item__desc">Випечений просто на поду печі, з ніжним кислуватим присмаком. <span class="item__weight">600&nbsp;г</span></p>
+                </div>
+                <div class="item__actions">
+                  <button class="btn-add" type="button" data-add aria-label="Додати до кошика: Пшеничний подовий">Додати</button>
+                </div>
+              </li>
+              <li class="item" data-id="buckwheat" data-name="Гречаний із насінням" data-price="74">
+                <svg class="item__art" aria-hidden="true" focusable="false"><use href="#i-seed"/></svg>
+                <div class="item__body">
+                  <div class="item__line">
+                    <h4 class="item__name">Гречаний із насінням</h4>
+                    <span class="item__dots" aria-hidden="true"></span>
+                    <data class="item__price" value="74">74&nbsp;грн</data>
+                  </div>
+                  <p class="item__desc">Горіховий смак гречаного борошна, соняшник і льон. <span class="item__weight">500&nbsp;г</span></p>
+                </div>
+                <div class="item__actions">
+                  <button class="btn-add" type="button" data-add aria-label="Додати до кошика: Гречаний із насінням">Додати</button>
+                </div>
+              </li>
+              <li class="item" data-id="baguette" data-name="Багет на заквасці" data-price="46">
+                <svg class="item__art" aria-hidden="true" focusable="false"><use href="#i-baguette"/></svg>
+                <div class="item__body">
+                  <div class="item__line">
+                    <h4 class="item__name">Багет на заквасці</h4>
+                    <span class="item__dots" aria-hidden="true"></span>
+                    <data class="item__price" value="46">46&nbsp;грн</data>
+                  </div>
+                  <p class="item__desc">Тонка хрустка скоринка й пористий м’якуш. <span class="item__weight">250&nbsp;г</span></p>
+                </div>
+                <div class="item__actions">
+                  <button class="btn-add" type="button" data-add aria-label="Додати до кошика: Багет на заквасці">Додати</button>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="menu-group reveal" data-category="pastry" aria-labelledby="cat-pastry">
+            <h3 class="menu-group__title" id="cat-pastry">Випічка</h3>
+            <ul class="items">
+              <li class="item" data-id="croissant" data-name="Вершковий круасан" data-price="52">
+                <svg class="item__art" aria-hidden="true" focusable="false"><use href="#i-croissant"/></svg>
+                <div class="item__body">
+                  <div class="item__line">
+                    <h4 class="item__name">Вершковий круасан</h4>
+                    <span class="item__dots" aria-hidden="true"></span>
+                    <data class="item__price" value="52">52&nbsp;грн</data>
+                  </div>
+                  <p class="item__desc">Листкове тісто на вершковому маслі, золотаве й легке. <span class="item__weight">80&nbsp;г</span></p>
+                </div>
+                <div class="item__actions">
+                  <button class="btn-add" type="button" data-add aria-label="Додати до кошика: Вершковий круасан">Додати</button>
+                </div>
+              </li>
+              <li class="item" data-id="pie" data-name="Пиріжок із капустою" data-price="34">
+                <svg class="item__art" aria-hidden="true" focusable="false"><use href="#i-pie"/></svg>
+                <div class="item__body">
+                  <div class="item__line">
+                    <h4 class="item__name">Пиріжок із капустою</h4>
+                    <span class="item__dots" aria-hidden="true"></span>
+                    <data class="item__price" value="34">34&nbsp;грн</data>
+                  </div>
+                  <p class="item__desc">Дріжджове тісто й тушкована капуста з цибулею. <span class="item__weight">110&nbsp;г</span></p>
+                </div>
+                <div class="item__actions">
+                  <button class="btn-add" type="button" data-add aria-label="Додати до кошика: Пиріжок із капустою">Додати</button>
+                </div>
+              </li>
+              <li class="item" data-id="poppy-bun" data-name="Булочка з маком" data-price="38">
+                <svg class="item__art" aria-hidden="true" focusable="false"><use href="#i-bun"/></svg>
+                <div class="item__body">
+                  <div class="item__line">
+                    <h4 class="item__name">Булочка з маком</h4>
+                    <span class="item__dots" aria-hidden="true"></span>
+                    <data class="item__price" value="38">38&nbsp;грн</data>
+                  </div>
+                  <p class="item__desc">М’яка закрутка з маком і краплею меду. <span class="item__weight">90&nbsp;г</span></p>
+                </div>
+                <div class="item__actions">
+                  <button class="btn-add" type="button" data-add aria-label="Додати до кошика: Булочка з маком">Додати</button>
+                </div>
+              </li>
+              <li class="item" data-id="pampushky" data-name="Пампушки з часником" data-price="48">
+                <svg class="item__art" aria-hidden="true" focusable="false"><use href="#i-pampushky"/></svg>
+                <div class="item__body">
+                  <div class="item__line">
+                    <h4 class="item__name">Пампушки з часником</h4>
+                    <span class="item__dots" aria-hidden="true"></span>
+                    <data class="item__price" value="48">48&nbsp;грн</data>
+                  </div>
+                  <p class="item__desc">Пухкі булочки під часниковою олією з кропом. <span class="item__weight">4&nbsp;шт.</span></p>
+                </div>
+                <div class="item__actions">
+                  <button class="btn-add" type="button" data-add aria-label="Додати до кошика: Пампушки з часником">Додати</button>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="menu-group reveal" data-category="sweet" aria-labelledby="cat-sweet">
+            <h3 class="menu-group__title" id="cat-sweet">Солодке</h3>
+            <ul class="items">
+              <li class="item" data-id="medivnyk" data-name="Медівник" data-price="72">
+                <svg class="item__art" aria-hidden="true" focusable="false"><use href="#i-medivnyk"/></svg>
+                <div class="item__body">
+                  <div class="item__line">
+                    <h4 class="item__name">Медівник</h4>
+                    <span class="item__dots" aria-hidden="true"></span>
+                    <data class="item__price" value="72">72&nbsp;грн</data>
+                  </div>
+                  <p class="item__desc">Тонкі медові коржі зі сметанним кремом. <span class="item__weight">130&nbsp;г</span></p>
+                </div>
+                <div class="item__actions">
+                  <button class="btn-add" type="button" data-add aria-label="Додати до кошика: Медівник">Додати</button>
+                </div>
+              </li>
+              <li class="item" data-id="poppy-roll" data-name="Маковий рулет" data-price="64">
+                <svg class="item__art" aria-hidden="true" focusable="false"><use href="#i-roll"/></svg>
+                <div class="item__body">
+                  <div class="item__line">
+                    <h4 class="item__name">Маковий рулет</h4>
+                    <span class="item__dots" aria-hidden="true"></span>
+                    <data class="item__price" value="64">64&nbsp;грн</data>
+                  </div>
+                  <p class="item__desc">Багато маку, родзинки й лимонна цедра. <span class="item__weight">120&nbsp;г</span></p>
+                </div>
+                <div class="item__actions">
+                  <button class="btn-add" type="button" data-add aria-label="Додати до кошика: Маковий рулет">Додати</button>
+                </div>
+              </li>
+              <li class="item" data-id="cookies" data-name="Вівсяне печиво" data-price="45">
+                <svg class="item__art" aria-hidden="true" focusable="false"><use href="#i-cookies"/></svg>
+                <div class="item__body">
+                  <div class="item__line">
+                    <h4 class="item__name">Вівсяне печиво</h4>
+                    <span class="item__dots" aria-hidden="true"></span>
+                    <data class="item__price" value="45">45&nbsp;грн</data>
+                  </div>
+                  <p class="item__desc">Хрустке по краях, м’яке всередині, з корицею. <span class="item__weight">3&nbsp;шт.</span></p>
+                </div>
+                <div class="item__actions">
+                  <button class="btn-add" type="button" data-add aria-label="Додати до кошика: Вівсяне печиво">Додати</button>
+                </div>
+              </li>
+              <li class="item" data-id="verhuny" data-name="Вергуни" data-price="55">
+                <svg class="item__art" aria-hidden="true" focusable="false"><use href="#i-verhuny"/></svg>
+                <div class="item__body">
+                  <div class="item__line">
+                    <h4 class="item__name">Вергуни</h4>
+                    <span class="item__dots" aria-hidden="true"></span>
+                    <data class="item__price" value="55">55&nbsp;грн</data>
+                  </div>
+                  <p class="item__desc">Хрусткі завитки з цукровою пудрою, як у бабусі. <span class="item__weight">150&nbsp;г</span></p>
+                </div>
+                <div class="item__actions">
+                  <button class="btn-add" type="button" data-add aria-label="Додати до кошика: Вергуни">Додати</button>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+        </div>
+      </section>
+
+      <section class="receipt" id="basket" aria-labelledby="basket-title">
+        <div class="receipt__scroll">
+          <header class="receipt__head">
+            <h2 id="basket-title" tabindex="-1">Ваш кошик</h2>
+            <p>Самовивіз із пекарні</p>
+          </header>
+
+          <noscript>
+            <p class="receipt__empty">Кошик працює лише з увімкненим JavaScript. Меню можна переглянути й без нього.</p>
+          </noscript>
+
+          <p class="receipt__empty" id="basket-empty">Тут поки порожньо. Оберіть щось смачне в меню й натисніть «Додати».</p>
+          <ul class="lines" id="basket-lines" hidden></ul>
+
+          <div class="summary" id="summary" hidden>
+            <h3 id="summary-title" tabindex="-1">Підсумок замовлення</h3>
+            <p class="summary__warning"><strong>Нічого не надіслано.</strong> Це демо: пекарня вигадана, тож замовлення ніхто не отримає, а ваші дані ніде не зберігаються.</p>
+            <ul class="summary__lines" id="summary-lines"></ul>
+            <p class="summary__meta" id="summary-meta"></p>
+          </div>
+
+          <p class="receipt__note" id="basket-note" role="status"></p>
+
+          <p class="receipt__total" aria-live="polite" aria-atomic="true">
+            <span>Разом</span>
+            <strong id="basket-total">0&nbsp;грн</strong>
+          </p>
+
+          <form class="order" id="order-form" hidden>
+            <div class="field">
+              <label for="order-name">Ім’я (необов’язково)</label>
+              <input id="order-name" type="text" maxlength="40" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="order-pickup">Коли зручно забрати?</label>
+              <select id="order-pickup">
+                <option>зранку, до 12:00</option>
+                <option>удень, 12:00–16:00</option>
+                <option>увечері, після 16:00</option>
+              </select>
+            </div>
+            <button class="btn btn--primary btn--block" type="submit">Показати підсумок</button>
+            <p class="order__hint">Кнопка лише показує підсумок на цій сторінці. Нічого не надсилається.</p>
+          </form>
+
+          <div class="summary__actions" id="summary-actions" hidden>
+            <button class="btn btn--primary btn--block" type="button" id="summary-edit">Змінити замовлення</button>
+            <button class="btn btn--ghost btn--block" type="button" id="summary-clear">Очистити кошик</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <section class="how" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">Три кроки</p>
+          <h2 id="how-title">Як це працює</h2>
+          <svg class="ornament" aria-hidden="true" focusable="false"><use href="#i-ornament"/></svg>
+        </header>
+        <ol class="steps">
+          <li class="step reveal">
+            <svg class="step__art" aria-hidden="true" focusable="false"><use href="#i-list"/></svg>
+            <h3>Оберіть у меню</h3>
+            <p>Хліб, випічка чи щось солодке: додайте до кошика все, чого хочеться.</p>
+          </li>
+          <li class="step reveal">
+            <svg class="step__art" aria-hidden="true" focusable="false"><use href="#i-basket"/></svg>
+            <h3>Перевірте кошик</h3>
+            <p>Змініть кількість, приберіть зайве й одразу побачите нову суму.</p>
+          </li>
+          <li class="step reveal">
+            <svg class="step__art" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>
+            <h3>Заберіть у пекарні</h3>
+            <p>Оберіть зручний час, а ми загорнемо все в паперовий пакет.</p>
+          </li>
+        </ol>
+        <p class="how__note">У цій демоверсії кошик працює лише у вашому браузері: замовлення нікуди не надходить.</p>
+      </div>
+    </section>
+
+    <div class="wrap info">
+
+      <section class="panel reveal" id="hours" aria-labelledby="hours-title">
+        <h2 id="hours-title">Години роботи</h2>
+        <svg class="ornament ornament--left" aria-hidden="true" focusable="false"><use href="#i-ornament"/></svg>
+        <table class="hours">
+          <caption class="sr-only">Розклад роботи пекарні за днями тижня</caption>
+          <thead class="sr-only">
+            <tr><th scope="col">День</th><th scope="col">Години</th></tr>
+          </thead>
+          <tbody>
+            <tr data-day="1"><th scope="row">Понеділок</th><td>вихідний</td></tr>
+            <tr data-day="2"><th scope="row">Вівторок</th><td>7:30–19:00</td></tr>
+            <tr data-day="3"><th scope="row">Середа</th><td>7:30–19:00</td></tr>
+            <tr data-day="4"><th scope="row">Четвер</th><td>7:30–19:00</td></tr>
+            <tr data-day="5"><th scope="row">П’ятниця</th><td>7:30–19:00</td></tr>
+            <tr data-day="6"><th scope="row">Субота</th><td>8:00–18:00</td></tr>
+            <tr data-day="0"><th scope="row">Неділя</th><td>8:00–15:00</td></tr>
+          </tbody>
+        </table>
+        <p class="panel__note">Найтепліший хліб чекає вранці, а другу партію дістаємо з печі ближче до обіду.</p>
+      </section>
+
+      <section class="panel reveal" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Контакти</h2>
+        <svg class="ornament ornament--left" aria-hidden="true" focusable="false"><use href="#i-ornament"/></svg>
+        <address class="contacts">
+          <p><span class="contacts__label">Телефон</span> <a href="tel:+380000000000">+380 00 000 00 00</a></p>
+          <p><span class="contacts__label">Пошта</span> <a href="mailto:hello@example.com">hello@example.com</a></p>
+          <p><span class="contacts__label">Адреса</span> вул. Вигадана, 1, Вінниця</p>
+        </address>
+
+        <figure class="sketch">
+          <svg viewBox="0 0 340 170" role="img" aria-label="Умовна намальована схема вулиці Вигаданої з позначкою пекарні" focusable="false">
+            <rect x="1" y="1" width="338" height="168" rx="4" fill="#efe0c4" stroke="#a8703a" stroke-width="1.5"/>
+            <g fill="none" stroke="#fbf5e8" stroke-linecap="round">
+              <path stroke-width="16" d="M-4 112C70 92 130 118 200 100s90-26 150-16"/>
+              <path stroke-width="9" d="M96 -4c10 50 6 100 18 180"/>
+              <path stroke-width="9" d="M250 -4c-8 40 0 70 14 96"/>
+            </g>
+            <path d="M-4 150c60-14 110 14 170 2s120-10 180 2" fill="none" stroke="#b9c7b0" stroke-width="6" stroke-linecap="round"/>
+            <g fill="#d8c19a" stroke="#a8703a">
+              <rect x="20" y="24" width="52" height="34" rx="2"/>
+              <rect x="128" y="22" width="58" height="26" rx="2"/>
+              <rect x="276" y="26" width="42" height="30" rx="2"/>
+            </g>
+            <text class="sketch__label" x="128" y="82" fill="#5b3a1e">вул. Вигадана</text>
+            <g transform="translate(214 96)">
+              <path d="M0 0c-14-18-20-26-20-36a20 20 0 0 1 40 0c0 10-6 18-20 36Z" fill="#8e1f1f" stroke="#5b3a1e" stroke-width="1.5"/>
+              <circle cy="-36" r="7" fill="#f7eedd"/>
+            </g>
+          </svg>
+          <figcaption>Схему намальовано для демо: вона нікуди не приведе.</figcaption>
+        </figure>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="wrap site-footer__inner">
+      <p class="site-footer__name">Тепла Скоринка</p>
+      <p>Вигадана пекарня. Демонстраційний проєкт, а не справжній бізнес.</p>
+      <p><a href="../../index.html">Сайт розроблено IAC</a></p>
+    </div>
+  </footer>
+
+  <a class="basket-bar" id="basket-bar" href="#basket" hidden>
+    <span id="basket-bar-text"></span>
+    <span class="basket-bar__cta">До кошика</span>
+  </a>
+
+</body>
+</html>
