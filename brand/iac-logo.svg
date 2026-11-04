@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" aria-label="IAC logo">
+  <title>IAC</title>
+  <rect width="1000" height="1000" fill="#101418"/>
+  <g transform="translate(32 0)">
+    <!-- I -->
+    <rect x="180" y="375" width="60" height="250" fill="#F4F6F8"/>
+    <!-- A: drawn as a code caret, no crossbar -->
+    <polygon fill="#C6F135" points="270,625 362,375 422,375 514,625 450,625 392,467 334,625"/>
+    <!-- C -->
+    <path d="M736.2 432.8 A95 95 0 1 0 736.2 567.2" fill="none" stroke="#F4F6F8" stroke-width="60"/>
+  </g>
+</svg>
