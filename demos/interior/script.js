@@ -274,7 +274,7 @@
     }
   }
 
-  /* Демо-калькулятор: ставки беруться з атрибутів data-rate у розмітці */
+  /* Калькулятор: ставки беруться з атрибутів data-rate у розмітці */
   function initEstimator() {
     var form = one('#estimator-form');
     if (!form) {
@@ -377,7 +377,7 @@
         return value.length < 10 ? 'Напишіть трохи докладніше: щонайменше 10 символів.' : '';
       },
       consent: function (input) {
-        return input.checked ? '' : 'Підтвердьте, що розумієте: це лише демо.';
+        return input.checked ? '' : 'Підтвердьте, що розумієте: це концепт сайту.';
       }
     };
 

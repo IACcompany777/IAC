@@ -10,31 +10,31 @@ window.SITE = {
     github: "", // full link to your GitHub profile
   },
 
-  // Add real projects only, and label demos as demos. Copy one block for each new project.
+  // Add real projects only, and label concepts as concepts. Copy one block for each new project.
   projects: [
     {
-      title: L("Demo: Tepla Skorynka bakery", "Демо: пекарня «Тепла Скоринка»"),
+      title: L("Concept: Tepla Skorynka bakery", "Концепт: пекарня «Тепла Скоринка»"),
       text: L(
-        "A one-page site for a fictional bakery, with a filterable menu and a working order basket.",
-        "Односторінковий сайт вигаданої пекарні з фільтром меню та робочим кошиком замовлення."
+        "A one-page bakery site concept with a filterable menu and a working order basket.",
+        "Односторінковий концепт сайту пекарні з фільтром меню та робочим кошиком замовлення."
       ),
       tags: "HTML · CSS · JavaScript",
       link: "demos/bakery/index.html",
     },
     {
-      title: L("Demo: Tykha Kimnata interior studio", "Демо: студія інтер'єрів «Тиха Кімната»"),
+      title: L("Concept: Tykha Kimnata interior studio", "Концепт: студія інтер'єрів «Тиха Кімната»"),
       text: L(
-        "A four-page site for a fictional studio, with a filterable gallery, a before/after slider, and a cost estimator.",
-        "Чотиристорінковий сайт вигаданої студії з фільтром галереї, слайдером «до і після» та калькулятором вартості."
+        "A four-page studio site concept with a filterable gallery, a before/after slider, and a cost estimator.",
+        "Чотиристорінковий концепт сайту студії з фільтром галереї, слайдером «до і після» та калькулятором вартості."
       ),
       tags: "HTML · CSS · JavaScript",
       link: "demos/interior/index.html",
     },
     {
-      title: L("Demo: Hayka i Kliuch car repair", "Демо: автосервіс «Гайка і Ключ»"),
+      title: L("Concept: Hayka i Kliuch car repair", "Концепт: автосервіс «Гайка і Ключ»"),
       text: L(
-        "A two-page site for a fictional repair shop, with step-by-step online booking and a live price estimate.",
-        "Двосторінковий сайт вигаданого автосервісу з покроковим онлайн-записом і живим кошторисом."
+        "A two-page repair shop site concept with step-by-step online booking and a live price estimate.",
+        "Двосторінковий концепт сайту автосервісу з покроковим онлайн-записом і живим кошторисом."
       ),
       tags: "HTML · CSS · JavaScript",
       link: "demos/autoservice/index.html",
@@ -307,7 +307,7 @@ window.SITE = {
           type: "hero",
           eyebrow: L("Work", "Роботи"),
           title: L("Working sites you can open.", "Робочі сайти, які можна відкрити."),
-          lead: L("The demos use fictional companies to show what I can build. They are not client projects.", "Демо створені для вигаданих компаній, щоб показати, що я вмію. Це не проєкти для клієнтів."),
+          lead: L("These concept sites show what I can build. They are not client projects.", "Ці концепти сайтів показують, що я вмію. Це не проєкти для клієнтів."),
         },
         { type: "projects", title: L("Projects", "Проєкти") },
         {

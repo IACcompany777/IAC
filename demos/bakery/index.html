@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Тепла Скоринка | Демо-проєкт IAC</title>
-  <meta name="description" content="Тепла Скоринка: вигадана пекарня, демо-проєкт IAC. Меню з фільтром за категоріями, робочий кошик, години роботи й контакти. Форми нічого не надсилають.">
+  <title>Тепла Скоринка | Концепт IAC</title>
+  <meta name="description" content="Тепла Скоринка: концепт сайту пекарні від IAC з фільтром меню, кошиком замовлення та годинами роботи.">
   <meta name="robots" content="noindex">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#6f1616">
@@ -14,9 +14,6 @@
 </head>
 <body>
 
-  <div class="demo-banner on-dark">
-    <p>Демо-проєкт IAC: компанія вигадана, форми нічого не надсилають. <a href="../../work.html">До портфоліо</a></p>
-  </div>
 
   <a class="skip-link" href="#main">Перейти до вмісту</a>
 
@@ -171,7 +168,6 @@
           <li><a href="#basket">Кошик <span class="nav__count" id="nav-count" hidden></span></a></li>
           <li><a href="#how">Як замовити</a></li>
           <li><a href="#hours">Години</a></li>
-          <li><a href="#contact">Контакти</a></li>
         </ul>
       </nav>
     </div>
@@ -514,7 +510,7 @@
 
           <div class="summary" id="summary" hidden>
             <h3 id="summary-title" tabindex="-1">Підсумок замовлення</h3>
-            <p class="summary__warning"><strong>Нічого не надіслано.</strong> Це демо: пекарня вигадана, тож замовлення ніхто не отримає, а ваші дані ніде не зберігаються.</p>
+            <p class="summary__warning"><strong>Нічого не надіслано.</strong> Це концепт сайту, тому замовлення ніхто не отримає, а ваші дані ніде не зберігаються.</p>
             <ul class="summary__lines" id="summary-lines"></ul>
             <p class="summary__meta" id="summary-meta"></p>
           </div>
@@ -540,7 +536,7 @@
               </select>
             </div>
             <button class="btn btn--primary btn--block" type="submit">Показати підсумок</button>
-            <p class="order__hint">Кнопка лише показує підсумок на цій сторінці. Нічого не надсилається.</p>
+            <p class="order__hint">Концепт сайту: кнопка лише показує підсумок, нічого не надсилається.</p>
           </form>
 
           <div class="summary__actions" id="summary-actions" hidden>
@@ -576,7 +572,6 @@
             <p>Оберіть зручний час, а ми загорнемо все в паперовий пакет.</p>
           </li>
         </ol>
-        <p class="how__note">У цій демоверсії кошик працює лише у вашому браузері: замовлення нікуди не надходить.</p>
       </div>
     </section>
 
@@ -603,37 +598,11 @@
         <p class="panel__note">Найтепліший хліб чекає вранці, а другу партію дістаємо з печі ближче до обіду.</p>
       </section>
 
-      <section class="panel reveal" id="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">Контакти</h2>
+      <section class="panel reveal" id="order-now" aria-labelledby="order-now-title">
+        <h2 id="order-now-title">Замовити</h2>
         <svg class="ornament ornament--left" aria-hidden="true" focusable="false"><use href="#i-ornament"/></svg>
-        <address class="contacts">
-          <p><span class="contacts__label">Телефон</span> <a href="tel:+380000000000">+380 00 000 00 00</a></p>
-          <p><span class="contacts__label">Пошта</span> <a href="mailto:hello@example.com">hello@example.com</a></p>
-          <p><span class="contacts__label">Адреса</span> вул. Вигадана, 1, Вінниця</p>
-        </address>
-
-        <figure class="sketch">
-          <svg viewBox="0 0 340 170" role="img" aria-label="Умовна намальована схема вулиці Вигаданої з позначкою пекарні" focusable="false">
-            <rect x="1" y="1" width="338" height="168" rx="4" fill="#efe0c4" stroke="#a8703a" stroke-width="1.5"/>
-            <g fill="none" stroke="#fbf5e8" stroke-linecap="round">
-              <path stroke-width="16" d="M-4 112C70 92 130 118 200 100s90-26 150-16"/>
-              <path stroke-width="9" d="M96 -4c10 50 6 100 18 180"/>
-              <path stroke-width="9" d="M250 -4c-8 40 0 70 14 96"/>
-            </g>
-            <path d="M-4 150c60-14 110 14 170 2s120-10 180 2" fill="none" stroke="#b9c7b0" stroke-width="6" stroke-linecap="round"/>
-            <g fill="#d8c19a" stroke="#a8703a">
-              <rect x="20" y="24" width="52" height="34" rx="2"/>
-              <rect x="128" y="22" width="58" height="26" rx="2"/>
-              <rect x="276" y="26" width="42" height="30" rx="2"/>
-            </g>
-            <text class="sketch__label" x="128" y="82" fill="#5b3a1e">вул. Вигадана</text>
-            <g transform="translate(214 96)">
-              <path d="M0 0c-14-18-20-26-20-36a20 20 0 0 1 40 0c0 10-6 18-20 36Z" fill="#8e1f1f" stroke="#5b3a1e" stroke-width="1.5"/>
-              <circle cy="-36" r="7" fill="#f7eedd"/>
-            </g>
-          </svg>
-          <figcaption>Схему намальовано для демо: вона нікуди не приведе.</figcaption>
-        </figure>
+        <p class="panel__note">Оберіть випічку в меню, додайте її до кошика й вкажіть зручний час самовивозу.</p>
+        <p><a class="btn" href="#menu">Перейти до меню</a></p>
       </section>
 
     </div>
@@ -642,8 +611,7 @@
   <footer class="site-footer on-dark">
     <div class="wrap site-footer__inner">
       <p class="site-footer__name">Тепла Скоринка</p>
-      <p>Вигадана пекарня. Демонстраційний проєкт, а не справжній бізнес.</p>
-      <p><a href="../../index.html">Сайт розроблено IAC</a></p>
+      <p><a href="../../work.html">Концепт сайту від IAC</a></p>
     </div>
   </footer>
 

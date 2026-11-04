@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Послуги та демо-калькулятор | Демо-проєкт IAC</title>
-<meta name="description" content="Три рівні послуг вигаданої студії «Тиха Кімната» та демонстраційний калькулятор орієнтовної вартості зі зразковими ставками.">
+<title>Послуги та калькулятор | Концепт IAC</title>
+<meta name="description" content="Три рівні послуг і калькулятор орієнтовної вартості. Концепт сайту від IAC.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#f3efe7">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f3efe7'/%3E%3Cpath d='M7 26V6h19' fill='none' stroke='%232a2e29' stroke-width='3'/%3E%3Cpath d='M7 26A19 20 0 0 1 26 6' fill='none' stroke='%23a54a2e' stroke-width='2'/%3E%3C/svg%3E">
@@ -13,7 +13,6 @@
 <script src="script.js" defer></script>
 </head>
 <body>
-<div class="demo-banner" role="note"><p>Демо-проєкт IAC: компанія вигадана, форми нічого не надсилають. <a href="../../work.html">До портфоліо</a></p></div>
 <a class="skip-link" href="#main">Перейти до основного змісту</a>
 <header class="site-header">
   <div class="site-header__in">
@@ -127,9 +126,9 @@
   <section class="estimator section" aria-labelledby="estimator-title">
     <div class="wrap">
       <div class="estimator__head reveal">
-        <p class="tag">Демо-розрахунок зі зразковими ставками</p>
+        <p class="tag">Орієнтовний розрахунок</p>
         <h2 id="estimator-title">Орієнтовна вартість</h2>
-        <p>Ставки вигадані, щоб показати роботу калькулятора. Це не ціни й не комерційна пропозиція.</p>
+        <p>Ставки наведено для прикладу. Це не комерційна пропозиція.</p>
       </div>
       <div class="estimator__grid reveal">
         <form id="estimator-form" novalidate onsubmit="return false">
@@ -143,25 +142,25 @@
             <legend>Рівень послуги</legend>
             <label class="choice">
               <input type="radio" name="level" value="sketch" data-rate="400" data-name="Ескіз">
-              <span>Ескіз <span>зразкова ставка 400 грн/м²</span></span>
+              <span>Ескіз <span>ставка 400 грн/м²</span></span>
             </label>
             <label class="choice">
               <input type="radio" name="level" value="project" data-rate="1200" data-name="Проєкт" checked>
-              <span>Проєкт <span>зразкова ставка 1 200 грн/м²</span></span>
+              <span>Проєкт <span>ставка 1 200 грн/м²</span></span>
             </label>
             <label class="choice">
               <input type="radio" name="level" value="full" data-rate="2000" data-name="Супровід">
-              <span>Супровід <span>зразкова ставка 2 000 грн/м²</span></span>
+              <span>Супровід <span>ставка 2 000 грн/м²</span></span>
             </label>
           </fieldset>
         </form>
         <div class="estimator__result">
           <div role="status" aria-atomic="true">
-            <p class="estimator__label">Орієнтовно, демо-розрахунок</p>
+            <p class="estimator__label">Орієнтовно</p>
             <p class="estimator__total" id="est-total">72&nbsp;000&nbsp;грн</p>
             <p class="estimator__detail" id="est-detail">60&nbsp;м² × 1&nbsp;200&nbsp;грн/м², рівень «Проєкт»</p>
           </div>
-          <p class="estimator__fine">Формула проста: площа × зразкова ставка, округлено до 100 грн. Реальна вартість залежала б від багатьох умов, а цей результат нікуди не надсилається.</p>
+          <p class="estimator__fine">Формула проста: площа × ставка, округлено до 100 грн.</p>
         </div>
       </div>
     </div>
@@ -183,7 +182,7 @@
     <div class="site-footer__grid">
       <div>
         <p class="site-footer__brand">Тиха Кімната</p>
-        <p class="site-footer__about">Вигадана студія інтер’єрів. Усі кімнати на сайті&nbsp;— намальовані концепти.</p>
+        <p class="site-footer__about">Студія інтер’єрів. Усі кімнати на сайті&nbsp;— намальовані концепти.</p>
       </div>
       <div>
         <p class="site-footer__title">Розділи</p>
@@ -194,14 +193,8 @@
           <li><a href="contact.html">Контакти</a></li>
         </ul>
       </div>
-      <div>
-        <p class="site-footer__title">Контакти-заглушки</p>
-        <p>+380 00 000 00 00</p>
-        <p>hello@example.com</p>
-        <p>вул. Вигадана, 2, Вінниця</p>
-      </div>
     </div>
-    <p class="site-footer__bottom"><a href="../../index.html">Сайт розроблено IAC</a></p>
+    <p class="site-footer__bottom"><a href="../../work.html">Концепт сайту від IAC</a></p>
   </div>
 </footer>
 </body>
