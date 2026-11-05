@@ -13,6 +13,15 @@ window.SITE = {
   // Add real projects only, and label concepts as concepts. Copy one block for each new project.
   projects: [
     {
+      title: L("Concept: Yasnyi Dim cleaning site on Drupal", "Концепт: сайт клінінгу «Ясний Дім» на Drupal"),
+      text: L(
+        "A seven-page bilingual site built on Drupal 11 with Webform. This link opens a static copy, so the forms send nothing.",
+        "Семисторінковий двомовний сайт на Drupal 11 із Webform. За посиланням відкривається статична копія, тому форми нічого не надсилають."
+      ),
+      tags: "Drupal 11 · Webform · Twig · CSS",
+      link: "demos/drupal/index.html",
+    },
+    {
       title: L("Concept: Tepla Skorynka bakery", "Концепт: пекарня «Тепла Скоринка»"),
       text: L(
         "A one-page bakery site concept with a filterable menu and a working order basket.",
